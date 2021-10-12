@@ -624,7 +624,7 @@ GameObject:
   - component: {fileID: 344911699}
   - component: {fileID: 344911698}
   m_Layer: 0
-  m_Name: low_poly_interior.7205 (1)
+  m_Name: Piggy Bank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -766,7 +766,7 @@ GameObject:
   - component: {fileID: 502943385}
   - component: {fileID: 502943384}
   m_Layer: 0
-  m_Name: low_poly_interior.8727
+  m_Name: Desk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
