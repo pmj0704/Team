@@ -34,7 +34,7 @@ public class Move : MonoBehaviour
     void Start()
     {
         myRigid = GetComponent<Rigidbody>();
-        LayPos = new Vector3(0, -0.6f, 0);
+        LayPos = new Vector3(0, -0.5f, 0);
     }
 
 
@@ -91,12 +91,12 @@ public class Move : MonoBehaviour
             {
                 Debug.Log("Lay");
                 IsLaying = true;
-                theCamera.transform.position = new Vector3(theCamera.transform.position.x, -0.5f, theCamera.transform.position.z);
+                theCamera.transform.localPosition = LayPos;
             }
             else
             {
                 IsLaying = false;
-                theCamera.transform.position = new Vector3(theCamera.transform.position.x, 0f, theCamera.transform.position.z);
+                theCamera.transform.localPosition = Vector3.zero;
             }
         }
     }
