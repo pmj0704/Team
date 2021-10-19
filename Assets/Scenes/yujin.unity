@@ -2630,6 +2630,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 4, z: 0.2}
   m_Center: {x: -4, y: 2, z: -1.1}
+--- !u!1 &1651277744 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1893871558916252591, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+  m_PrefabInstance: {fileID: 1978659490}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1682127118
 GameObject:
   m_ObjectHideFlags: 0
@@ -3298,13 +3303,17 @@ PrefabInstance:
       value: Key
       objectReference: {fileID: 0}
     - target: {fileID: 1893871558916252628, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+      propertyPath: getKey
+      value: 
+      objectReference: {fileID: 1651277744}
+    - target: {fileID: 1893871558916252628, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: getKeyText
       value: 
-      objectReference: {fileID: 1682127118}
+      objectReference: {fileID: 1682127120}
     - target: {fileID: 1893871558916252628, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: getkeyImage
       value: 
-      objectReference: {fileID: 142619601}
+      objectReference: {fileID: 142619603}
     - target: {fileID: 3705028537381535112, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -3643,7 +3652,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh47944
+  m_Name: pb_Mesh16706
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

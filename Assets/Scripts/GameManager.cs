@@ -13,4 +13,5 @@ public class GameManager : MonoSingleton<GameManager>
     public Drawer drawer;
 
     public Transform playerTransform;
+
 }
