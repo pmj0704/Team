@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Key
   - Door
+  - UI
+  - PlayerAim
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - Key
   - Door
   - Room
-  - 
+  - PlayerAim
   - 
   - 
   - 

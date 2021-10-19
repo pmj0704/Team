@@ -4,24 +4,11 @@ using UnityEngine;
 
 public class GetKey : MonoBehaviour
 {
-    private bool isVisible = false;
-
-    private void OnBecameVisible()
+    private void OnTriggerEnter(Collider other)
     {
-        isVisible = true;
-        Debug.Log("vis");
-    }
-    private void OnBecameInvisible()
-    {
-        isVisible = false;
-    }
-    private void OnCollisionStay(Collision other)
-    {
-        
-        if(other.gameObject.tag == "Key")
+        Debug.Log(other.gameObject.tag);
+        if (other.gameObject.tag == "PlayerAim")
         {
-            Debug.Log("PlayerIn");
-
             if (Input.GetKeyDown(KeyCode.F))
             {
                 Debug.Log("GetKey");
