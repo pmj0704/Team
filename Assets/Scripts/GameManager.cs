@@ -10,5 +10,7 @@ public class GameManager : MonoSingleton<GameManager>
     [HideInInspector]
     public int repeatTime = 0;
 
+    public Drawer drawer;
+
     public Transform playerTransform;
 }
