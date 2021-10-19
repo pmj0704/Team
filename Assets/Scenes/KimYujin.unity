@@ -941,6 +941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasKey: 0
   repeatTime: 0
+  drawer: {fileID: 0}
   playerTransform: {fileID: 964199340}
 --- !u!4 &502174482
 Transform:
