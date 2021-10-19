@@ -8,6 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 1893871558916252587}
   - component: {fileID: 1893871558916252586}
   - component: {fileID: 1893871558916252585}
@@ -15,6 +16,12 @@ GameObject:
   - component: {fileID: 1893871558916252584}
   - component: {fileID: 1893871558916252628}
   m_Layer: 8
+=======
+  - component: {fileID: 3705028537381535112}
+  - component: {fileID: 5634532462982891454}
+  - component: {fileID: 2093443782267337543}
+  m_Layer: 0
+>>>>>>> 829f7c28c70bef4fae0ab0dbf6b7f9c7e47afae6
   m_Name: rust_key
   m_TagString: Key
   m_Icon: {fileID: 0}
@@ -84,6 +91,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+<<<<<<< HEAD
 --- !u!54 &1893871558916252629
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -125,3 +133,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 076ad83ad0f405e439af4b4669901a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> 829f7c28c70bef4fae0ab0dbf6b7f9c7e47afae6
