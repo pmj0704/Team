@@ -7,12 +7,11 @@ public class GetKey : MonoBehaviour
 {
     [SerializeField]
     private GameObject getKeyText;
+    
     [SerializeField]
-    private GameObject getkeyImage;
-
+    private GameObject light;
     private bool inventorykey = false;
     private bool inventoryText = false;
-
     
     private void OnTriggerStay(Collider other)
     {
@@ -21,21 +20,32 @@ public class GetKey : MonoBehaviour
 
              inventoryText = true;
              getKeyText.SetActive(inventoryText);
+             light.SetActive(inventoryText);
             
             if (Input.GetKeyDown(KeyCode.F))
             {
                 Debug.Log("GetKey");
                 GameManager.Instance.hasKey = true;
                 inventorykey = true;
-                getkeyImage.SetActive(inventorykey);
-              
+                GameManager.Instance.inventoryKey();
                 if(inventorykey == true)
                 {
                     inventoryText = false;
                     getKeyText.SetActive(inventoryText);
                 }
+                gameObject.SetActive(false);
             }
         }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "PlayerAim")
+        {
+            inventoryText = false;
+            getKeyText.SetActive(inventoryText);
+            light.SetActive(inventoryText);
+        }
+
     }
 }
 
