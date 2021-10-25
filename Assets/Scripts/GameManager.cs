@@ -12,6 +12,31 @@ public class GameManager : MonoSingleton<GameManager>
 
     public Drawer drawer;
 
-    public Transform playerTransform;
-
+    [SerializeField]
+    private GameObject getkeyImage;
+    [SerializeField]
+    private Transform playerTransform;
+    [SerializeField]
+    private FadeCamera fadingCamera;
+    [SerializeField]
+    private Transform Respawn;
+    public void movePlayer()
+    {
+        playerTransform.position = Respawn.position;
+    }
+    public void fadeCamera()
+    {
+        fadingCamera.RedoFade();
+    }
+    public void inventoryKey()
+    {
+        getkeyImage.SetActive(hasKey);
+    }
+    public void NextStage()
+    {
+        movePlayer();
+        fadeCamera();
+        inventoryKey();
+        repeatTime++;
+    }
 }

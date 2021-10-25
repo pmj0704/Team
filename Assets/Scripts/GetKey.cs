@@ -6,39 +6,46 @@ using UnityEngine.UI;
 public class GetKey : MonoBehaviour
 {
     [SerializeField]
-    private Text getKeyText;
+    private GameObject getKeyText;
+    
     [SerializeField]
-    private Image getkeyImage;
-
-    [SerializeField]
-    private GameObject getKey;
-
-    private bool getKeyCheck = false;
-
-
-    private void OnBecameVisible()
-    // ∫Ò√Á¡¸
-    {
-        getKeyText.gameObject.SetActive(true);
-    }
-
-    private void OnBecameInvisible()
-    // æ»∫Ò√Á¡¸
-    {
-        getKeyText.gameObject.SetActive(false);
-    }
-
+    private GameObject light;
+    private bool inventorykey = false;
+    private bool inventoryText = false;
+    
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "PlayerAim")
-        {   
+        {
+
+             inventoryText = true;
+             getKeyText.SetActive(inventoryText);
+             light.SetActive(inventoryText);
+            
             if (Input.GetKeyDown(KeyCode.F))
             {
+                Debug.Log("GetKey");
                 GameManager.Instance.hasKey = true;
-                getkeyImage.gameObject.SetActive(true);
-                getKey.gameObject.SetActive(false);
+                inventorykey = true;
+                GameManager.Instance.inventoryKey();
+                if(inventorykey == true)
+                {
+                    inventoryText = false;
+                    getKeyText.SetActive(inventoryText);
+                }
+                gameObject.SetActive(false);
             }
         }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "PlayerAim")
+        {
+            inventoryText = false;
+            getKeyText.SetActive(inventoryText);
+            light.SetActive(inventoryText);
+        }
+
     }
 }
 
