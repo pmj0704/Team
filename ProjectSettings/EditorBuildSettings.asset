@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/yujin.unity
+    guid: 16297507ec87b3e40a45a5ce9140e50b
   m_configObjects: {}
