@@ -49,6 +49,9 @@ public class Move : MonoBehaviour
         CameraRotation();
         CharacterRotation();
         LayDown();
+
+        myRigid.velocity = Vector3.zero;
+        myRigid.angularVelocity = Vector3.zero;
     }
 
     private void Moving()
