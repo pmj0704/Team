@@ -10,7 +10,6 @@ TagManager:
   - UI
   - PlayerAim
   - Drawer
-  - Wall
   layers:
   - Default
   - TransparentFX
