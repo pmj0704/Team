@@ -2526,7 +2526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 177703c7c225f7f418a972c2717be597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 100
+  walkSpeed: 70
   JumpPower: 0
   lookSensitivity: 1
   cameraRotationLimit: 70

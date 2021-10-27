@@ -112,7 +112,7 @@ public class Move : MonoBehaviour
     }
     private void OnCollisionExit(Collision collision)
     {
-        walkSpeed = 10;
+        walkSpeed = 70;
     }
 
 
