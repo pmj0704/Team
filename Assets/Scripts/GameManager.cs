@@ -12,6 +12,8 @@ public class GameManager : MonoSingleton<GameManager>
 
     public Drawer drawer;
 
+    public bool playerAimTag;
+
     [SerializeField]
     private GameObject getkeyImage;
     [SerializeField]
@@ -20,6 +22,7 @@ public class GameManager : MonoSingleton<GameManager>
     private FadeCamera fadingCamera;
     [SerializeField]
     private Transform Respawn;
+
     public void movePlayer()
     {
         playerTransform.position = Respawn.position;

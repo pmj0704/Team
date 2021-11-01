@@ -4,38 +4,34 @@ using UnityEngine;
 
 public class PlayerAim : MonoBehaviour
 {
-    private bool Move = false;
-    Collider collider;
+    RaycastHit playerAim;
+    float maxDistance = 9.3f;
+    public LayerMask layerMask;
 
-    private void OnTriggerStay(Collider other)
+    private void Start()
     {
-        switch(other.gameObject.tag)
+        // Cursor.lockState = CursorLockMode.Locked;
+        // 마우스커서 안 보이는 것, esc하면 풀림
+    }
+    // 기본적으로 플레이어 에임에서 레이캐스트가 나가게 해둠
+    private void FixedUpdate()
+    {
+        if (Physics.Raycast(transform.position, transform.forward, out playerAim, maxDistance, layerMask))
+        // 레이캐스트는 물체 감지시 true 반환
         {
-            case "Drawer":
-                if(Input.GetKeyDown(KeyCode.F))
+            if (playerAim.collider.tag == "Drawer")
+            {
+                if (Input.GetKeyDown(KeyCode.F))
                 {
-                    collider = other;
-                    Move = true;
+                    Debug.Log("서랍장오픈");
                 }
-                break;
+            }
+            if (playerAim.collider.tag == "Untagged")
+            {
+                Debug.Log("물체감지");
+            }
         }
     }
-    private void Update()
-    {
-        if(Move)
-        {
-            if (collider.transform.position.x < 0.1f) collider.transform.position 
-                    = Vector3.MoveTowards(collider.transform.position, 
-                    new Vector3(0.5f, collider.transform.position.y, 
-                    collider.transform.position.z), Time.deltaTime * 2);
 
-            else collider.transform.position = 
-                    Vector3.MoveTowards(collider.transform.position, 
-                    new Vector3(0.05f, collider.transform.position.y, 
-                    collider.transform.position.z), Time.deltaTime * 2);
 
-            if (collider.transform.position.x < 0.051 || collider.transform.position.x > 0.49) 
-                Move = false;
-        }
-    }
 }

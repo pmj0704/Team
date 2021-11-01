@@ -18,12 +18,12 @@ TagManager:
   - Water
   - UI
   - Player
-  - Furnature
   - Key
   - Door
   - Room
   - PlayerAim
-  - Drawer
+  - PlayerTagLayer
+  - NotTagLayer
   - 
   - 
   - 
