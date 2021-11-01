@@ -27,7 +27,7 @@ public class Move : MonoBehaviour
     private bool IsJumping;
     private bool IsLaying= false;
     private Vector3 LayPos;
-
+        
 
 
     // Use this for initialization
@@ -45,10 +45,13 @@ public class Move : MonoBehaviour
     {
 
         Moving();
-        Jump();
+        //Jump();
         CameraRotation();
         CharacterRotation();
         LayDown();
+
+         myRigid.velocity = Vector3.zero;
+         myRigid.angularVelocity = Vector3.zero;
     }
 
     private void Moving()
@@ -67,21 +70,21 @@ public class Move : MonoBehaviour
 
     }
 
-    private void Jump()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (!IsJumping)
-            {
-                IsJumping = true;
-                myRigid.AddForce(Vector3.up * JumpPower, ForceMode.Impulse);
-            }
-            else
-            {
-                return;
-            }
-        }
-    }
+    //private void Jump()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Space))
+    //    {
+    //        if (!IsJumping)
+    //        {
+    //            IsJumping = true;
+    //            myRigid.AddForce(Vector3.up * JumpPower, ForceMode.Impulse);
+    //        }
+    //        else
+    //        {
+    //            return;
+    //        }
+    //    }
+    //}
 
     private void LayDown()
     {
@@ -100,13 +103,17 @@ public class Move : MonoBehaviour
             }
         }
     }
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Ground"))
-    //    {
-    //        IsJumping = false;
-    //    }
-    //}
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            walkSpeed = 0;
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        walkSpeed = 70;
+    }
 
 
     private void CharacterRotation()

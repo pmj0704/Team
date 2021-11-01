@@ -7,28 +7,29 @@ public class GetKey : MonoBehaviour
 {
     [SerializeField]
     private GameObject getKeyText;
-
+    [SerializeField]
+    private Vector3[] stageKey;
     [SerializeField]
     private GameObject light;
     private bool inventorykey = false;
     private bool inventoryText = false;
-
+    
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "PlayerAim")
         {
 
-            inventoryText = true;
-            getKeyText.SetActive(inventoryText);
-            light.SetActive(inventoryText);
-
+             inventoryText = true;
+             getKeyText.SetActive(inventoryText);
+             light.SetActive(inventoryText);
+            
             if (Input.GetKeyDown(KeyCode.F))
             {
                 Debug.Log("GetKey");
                 GameManager.Instance.hasKey = true;
                 inventorykey = true;
                 GameManager.Instance.inventoryKey();
-                if (inventorykey == true)
+                if(inventorykey == true)
                 {
                     inventoryText = false;
                     getKeyText.SetActive(inventoryText);
@@ -47,4 +48,14 @@ public class GetKey : MonoBehaviour
         }
 
     }
+    public void KeyPos(int stage)
+    {
+        light.SetActive(inventoryText);
+        gameObject.SetActive(true);
+        gameObject.transform.position = stageKey[stage];
+    }
 }
+
+
+
+
