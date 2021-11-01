@@ -7,7 +7,8 @@ public class GetKey : MonoBehaviour
 {
     [SerializeField]
     private GameObject getKeyText;
-    
+    [SerializeField]
+    private Vector3[] stageKey;
     [SerializeField]
     private GameObject light;
     private bool inventorykey = false;
@@ -46,6 +47,12 @@ public class GetKey : MonoBehaviour
             light.SetActive(inventoryText);
         }
 
+    }
+    public void KeyPos(int stage)
+    {
+        light.SetActive(inventoryText);
+        gameObject.SetActive(true);
+        gameObject.transform.position = stageKey[stage];
     }
 }
 

@@ -11,7 +11,8 @@ public class GameManager : MonoSingleton<GameManager>
     public int repeatTime = 0;
 
     public Drawer drawer;
-
+    [SerializeField]
+    private GetKey Key;
     [SerializeField]
     private GameObject getkeyImage;
     [SerializeField]
@@ -38,5 +39,6 @@ public class GameManager : MonoSingleton<GameManager>
         fadeCamera();
         inventoryKey();
         repeatTime++;
+        Key.KeyPos(repeatTime);
     }
 }
