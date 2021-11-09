@@ -5,8 +5,10 @@ using UnityEngine;
 public class PlayerAim : MonoBehaviour
 {
     RaycastHit playerAim;
-    float maxDistance = 9.3f;
+    float maxDistance = 15f;
     public LayerMask layerMask;
+    [SerializeField]
+    private GetKey key;
 
     private void Start()
     {
@@ -24,6 +26,36 @@ public class PlayerAim : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     Debug.Log("¼­¶øÀå¿ÀÇÂ");
+                    if (playerAim.collider.GetComponent<Drawer>().isClosed)
+                    {
+                        playerAim.collider.transform.position = new Vector3(playerAim.collider.transform.position.x, playerAim.collider.transform.position.y, playerAim.collider.transform.position.z - 3);
+                        StartCoroutine(flip());
+                    }
+                    else
+                    {
+                        playerAim.collider.transform.position = new Vector3(playerAim.collider.transform.position.x, playerAim.collider.transform.position.y, playerAim.collider.transform.position.z + 3);
+                        StartCoroutine(flip());
+
+                    }
+                }
+            }
+            else if(playerAim.collider.tag == "Drawer1")
+            {
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    if (playerAim.collider.GetComponent<Drawer>().isClosed)
+                    {
+                        playerAim.collider.transform.position = new Vector3(playerAim.collider.transform.position.x + 3, playerAim.collider.transform.position.y, playerAim.collider.transform.position.z);
+                        StartCoroutine(flip());
+                    }
+                    else
+                    {
+                        if (!(playerAim.collider.GetComponent<Drawer>().includeKey))
+                        {
+                            playerAim.collider.transform.position = new Vector3(playerAim.collider.transform.position.x - 3, playerAim.collider.transform.position.y, playerAim.collider.transform.position.z);
+                            StartCoroutine(flip());
+                        }
+                    }
                 }
             }
             if (playerAim.collider.tag == "Untagged")
@@ -32,6 +64,10 @@ public class PlayerAim : MonoBehaviour
             }
         }
     }
-
+    private IEnumerator flip()
+    {
+        yield return new WaitForSeconds(.1f);
+        playerAim.collider.GetComponent<Drawer>().isClosed = !playerAim.collider.GetComponent<Drawer>().isClosed;
+    }
 
 }

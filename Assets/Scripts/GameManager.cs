@@ -98,6 +98,7 @@ public class GameManager : MonoSingleton<GameManager>
         IFText.gameObject.SetActive(false);
         Key.KeyPos(repeatTime);
         textOff = true;
+        Key.inDraweBool();
     }
     private void CheckWait()
     {
