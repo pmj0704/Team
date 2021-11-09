@@ -17,8 +17,10 @@ public class PlayerAim : MonoBehaviour
     private void FixedUpdate()
     {
         if (Physics.Raycast(transform.position, transform.forward, out playerAim, maxDistance, layerMask))
-        // 레이캐스트는 물체 감지시 true 반환
         {
+            //Debug.DrawRay(transform.position, transform.forward * maxDistance, Color.red, 0.3f);
+            // 레이캐스트 보는거 
+
             if (playerAim.collider.tag == "Drawer")
             {
                 if (Input.GetKeyDown(KeyCode.F))
@@ -32,6 +34,4 @@ public class PlayerAim : MonoBehaviour
             }
         }
     }
-
-
 }
