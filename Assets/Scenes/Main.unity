@@ -468,9 +468,9 @@ GameObject:
   - component: {fileID: 187637728}
   - component: {fileID: 187637731}
   - component: {fileID: 187637730}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Drawer_Big1 (1)
-  m_TagString: Untagged
+  m_TagString: Drawer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4414,7 +4414,7 @@ GameObject:
   - component: {fileID: 1900678637}
   - component: {fileID: 1900678639}
   - component: {fileID: 1900678640}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Image
   m_TagString: PlayerAim
   m_Icon: {fileID: 0}
@@ -4505,7 +4505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
 --- !u!1 &1908508479 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1893871558916252591, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
@@ -5759,9 +5759,9 @@ GameObject:
   - component: {fileID: 7598502356099832403}
   - component: {fileID: 7598502356101908011}
   - component: {fileID: 7598502356101908010}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Drawer_Med1
-  m_TagString: Untagged
+  m_TagString: Drawer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5808,9 +5808,9 @@ GameObject:
   - component: {fileID: 7598502356099852385}
   - component: {fileID: 7598502356101961027}
   - component: {fileID: 7598502356101961026}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Drawer4
-  m_TagString: Untagged
+  m_TagString: Drawer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5857,9 +5857,9 @@ GameObject:
   - component: {fileID: 7598502356099741731}
   - component: {fileID: 7598502356101985595}
   - component: {fileID: 7598502356101985594}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Drawer_Med2
-  m_TagString: Untagged
+  m_TagString: Drawer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5906,9 +5906,9 @@ GameObject:
   - component: {fileID: 7598502356099793733}
   - component: {fileID: 7598502356101988959}
   - component: {fileID: 7598502356101988958}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Drawer_Med3
-  m_TagString: Untagged
+  m_TagString: Drawer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6027,9 +6027,9 @@ GameObject:
   - component: {fileID: 7598502356099795163}
   - component: {fileID: 7598502356102012009}
   - component: {fileID: 7598502356102012008}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Drawer2
-  m_TagString: Untagged
+  m_TagString: Drawer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6076,9 +6076,9 @@ GameObject:
   - component: {fileID: 7598502356099832331}
   - component: {fileID: 7598502356102016955}
   - component: {fileID: 7598502356102016954}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Drawer3
-  m_TagString: Untagged
+  m_TagString: Drawer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6125,7 +6125,7 @@ GameObject:
   - component: {fileID: 7598502356099793813}
   - component: {fileID: 7598502356102067785}
   - component: {fileID: 7598502356102067784}
-  m_Layer: 12
+  m_Layer: 11
   m_Name: Drawer1
   m_TagString: Drawer
   m_Icon: {fileID: 0}
@@ -6174,9 +6174,9 @@ GameObject:
   - component: {fileID: 7598502356099854843}
   - component: {fileID: 7598502356102084121}
   - component: {fileID: 7598502356102084120}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Drawer_Big1
-  m_TagString: Untagged
+  m_TagString: Drawer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
