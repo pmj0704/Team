@@ -22,6 +22,8 @@ public class GameManager : MonoSingleton<GameManager>
     private FadeCamera fadingCamera;
     [SerializeField]
     private Transform Respawn;
+    [SerializeField]
+    private Text IFText;
 
     [SerializeField]
     private Text timerText;
@@ -31,7 +33,15 @@ public class GameManager : MonoSingleton<GameManager>
     private float hour = 0;
 
     private bool timerReset = false;
+    [SerializeField]
+    private string[] inform;
 
+    bool textOff = true;
+    private void Start()
+    {
+        CheckWait();
+        IFText.text = inform[repeatTime];
+    }
     void Update()
     {
         if (timerReset == false)
@@ -57,6 +67,12 @@ public class GameManager : MonoSingleton<GameManager>
             hour = 0;
             timerReset = false;
         }
+        CheckWait();
+        if (Input.GetMouseButtonDown(1))
+        {
+            IFText.gameObject.SetActive(false);
+        }
+
     }
 
     public void movePlayer()
@@ -73,11 +89,41 @@ public class GameManager : MonoSingleton<GameManager>
     }
     public void NextStage()
     {
+        repeatTime++;
         movePlayer();
         fadeCamera();
         inventoryKey();
-        repeatTime++;
         timerReset = true;
+        IFText.text = inform[repeatTime];
+        IFText.gameObject.SetActive(false);
         Key.KeyPos(repeatTime);
+        textOff = true;
+    }
+    private void CheckWait()
+    {
+        switch (repeatTime)
+        {
+            case 2:
+            case 3:
+            case 4:
+                WaitKey(15);
+                break;
+            default:
+                return;
+                break;
+        }
+    }
+    private void WaitKey(int sec)
+    {
+        if (second > sec && textOff && !hasKey)
+        {
+            IFText.gameObject.SetActive(true);
+            Debug.Log(repeatTime);
+            textOff = false;
+        }
+        else if(!(second > sec) || hasKey)
+        {
+            IFText.gameObject.SetActive(false);
+        }
     }
 }

@@ -27,7 +27,8 @@ public class Move : MonoBehaviour
     private bool IsJumping;
     private bool IsLaying= false;
     private Vector3 LayPos;
-        
+
+    private bool isStart = false;
 
 
     // Use this for initialization
@@ -35,6 +36,7 @@ public class Move : MonoBehaviour
     {
         myRigid = GetComponent<Rigidbody>();
         LayPos = new Vector3(0, -0.5f, 0);
+        StartCoroutine(WaitAndStart());
     }
 
 
@@ -43,14 +45,17 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isStart)
+        {
 
-        Moving();
-        //Jump();
-        CameraRotation();
-        CharacterRotation();
-        LayDown();
+            Moving();
+            //Jump();
+            CameraRotation();
+            CharacterRotation();
+            LayDown();
 
-         myRigid.velocity = Vector3.zero;
+        }
+        myRigid.velocity = Vector3.zero;
          myRigid.angularVelocity = Vector3.zero;
     }
 
@@ -85,7 +90,11 @@ public class Move : MonoBehaviour
     //        }
     //    }
     //}
-
+    private IEnumerator WaitAndStart()
+    {
+        yield return new WaitForSeconds(0.6f);
+        isStart = true;
+    }
     private void LayDown()
     {
         if(Input.GetKeyDown(KeyCode.LeftShift))
