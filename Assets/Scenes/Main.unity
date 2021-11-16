@@ -1390,7 +1390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasKey: 0
   repeatTime: 0
-  drawer: {fileID: 7598502356102000784}
+  drawer: {fileID: 0}
   Key: {fileID: 1519724175}
   getkeyImage: {fileID: 142619601}
   playerTransform: {fileID: 964199340}
@@ -2509,6 +2509,7 @@ Transform:
   m_Children:
   - {fileID: 1746306752}
   - {fileID: 1461196170}
+  - {fileID: 1171667436}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2551,7 +2552,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh58726
+  m_Name: pb_Mesh18726
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2905,6 +2906,89 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2611427131670709056, guid: 8c2cc20cca80c9444bec35819c91fecd, type: 3}
   m_PrefabInstance: {fileID: 1148927716}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1171667433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1171667436}
+  - component: {fileID: 1171667435}
+  - component: {fileID: 1171667434}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!81 &1171667434
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171667433}
+  m_Enabled: 1
+--- !u!20 &1171667435
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171667433}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 3
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &1171667436
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171667433}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 964199340}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1171983532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4424,7 +4508,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -4581,7 +4665,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 2048
-  key: {fileID: 0}
+  key: {fileID: 1519724175}
 --- !u!1 &1908508479 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1893871558916252591, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
@@ -6146,7 +6230,7 @@ GameObject:
   - component: {fileID: 7598502356100965433}
   - component: {fileID: 7598502356099828483}
   - component: {fileID: 7598502356101991262}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Chest of drawers
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -6176,7 +6260,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7598502356101702863}
   - component: {fileID: 7598502356111498501}
-  - component: {fileID: 7598502356102000784}
   m_Layer: 7
   m_Name: Chest of drawers
   m_TagString: Untagged
@@ -6184,20 +6267,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &7598502356102000784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7598502356102000783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00e754363c2f5fe4aac239edf9a7d679, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isClosed: 1
-  includeKey: 0
 --- !u!1 &7598502356102012007
 GameObject:
   m_ObjectHideFlags: 0

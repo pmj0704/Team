@@ -26,36 +26,14 @@ public class PlayerAim : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     Debug.Log("서랍장오픈");
-                    if (playerAim.collider.GetComponent<Drawer>().isClosed)
-                    {
-                        playerAim.collider.transform.position = new Vector3(playerAim.collider.transform.position.x, playerAim.collider.transform.position.y, playerAim.collider.transform.position.z - 3);
-                        StartCoroutine(flip());
-                    }
-                    else
-                    {
-                        playerAim.collider.transform.position = new Vector3(playerAim.collider.transform.position.x, playerAim.collider.transform.position.y, playerAim.collider.transform.position.z + 3);
-                        StartCoroutine(flip());
-
-                    }
+                    playerAim.collider.GetComponent<Drawer>().OpenAndCloseF(1);
                 }
             }
             else if(playerAim.collider.tag == "Drawer1")
             {
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    if (playerAim.collider.GetComponent<Drawer>().isClosed)
-                    {
-                        playerAim.collider.transform.position = new Vector3(playerAim.collider.transform.position.x + 3, playerAim.collider.transform.position.y, playerAim.collider.transform.position.z);
-                        StartCoroutine(flip());
-                    }
-                    else
-                    {
-                        if (!(playerAim.collider.GetComponent<Drawer>().includeKey))
-                        {
-                            playerAim.collider.transform.position = new Vector3(playerAim.collider.transform.position.x - 3, playerAim.collider.transform.position.y, playerAim.collider.transform.position.z);
-                            StartCoroutine(flip());
-                        }
-                    }
+                    playerAim.collider.GetComponent<Drawer>().OpenAndCloseF(2);
                 }
             }
             if (playerAim.collider.tag == "Untagged")
@@ -63,11 +41,6 @@ public class PlayerAim : MonoBehaviour
                 Debug.Log("물체감지");
             }
         }
-    }
-    private IEnumerator flip()
-    {
-        yield return new WaitForSeconds(.1f);
-        playerAim.collider.GetComponent<Drawer>().isClosed = !playerAim.collider.GetComponent<Drawer>().isClosed;
     }
 
 }
