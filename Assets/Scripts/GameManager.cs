@@ -7,6 +7,9 @@ public class GameManager : MonoSingleton<GameManager>
 {
     [HideInInspector]
     public bool hasKey = false;
+    [HideInInspector]
+    public int hasSpeaker = 0;
+
 
     [HideInInspector]
     public int repeatTime = 0;

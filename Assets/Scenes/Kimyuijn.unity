@@ -229,9 +229,12 @@ GameObject:
   - component: {fileID: 122983611}
   - component: {fileID: 122983613}
   - component: {fileID: 122983612}
-  m_Layer: 0
+  - component: {fileID: 122983614}
+  - component: {fileID: 122983615}
+  - component: {fileID: 122983616}
+  m_Layer: 11
   m_Name: Speaker
-  m_TagString: Untagged
+  m_TagString: Speaker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -299,6 +302,128 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122983610}
   m_Mesh: {fileID: -6203636339804918790, guid: 75c044acc3a2a95429298aa3b441c90c, type: 3}
+--- !u!82 &122983614
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122983610}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 0
+  MaxDistance: 50
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &122983615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122983610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817fbf7f6650a634583dbd0d45e5aabc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  headSetMusic: {fileID: 8300000, guid: 094439cda6484644681e003487288ba2, type: 3}
+--- !u!65 &122983616
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122983610}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.001848438, y: 0.0019781254, z: 0.0009277347}
+  m_Center: {x: -0.000233111, y: -0.000017976548, z: 0.00004312248}
 --- !u!1 &142619601
 GameObject:
   m_ObjectHideFlags: 0
@@ -1759,7 +1884,7 @@ GameObject:
   - component: {fileID: 713826061}
   - component: {fileID: 713826063}
   - component: {fileID: 713826062}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: TV
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -2514,7 +2639,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16998
+  m_Name: pb_Mesh17008
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2865,7 +2990,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.0000076293945, y: -42.09999}
+  m_AnchoredPosition: {x: -0.0000076293945, y: -42.100098}
   m_SizeDelta: {x: 309.2, y: 84.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1226207002
@@ -3236,7 +3361,8 @@ GameObject:
   - component: {fileID: 1406898388}
   - component: {fileID: 1406898390}
   - component: {fileID: 1406898389}
-  m_Layer: 7
+  - component: {fileID: 1406898391}
+  m_Layer: 11
   m_Name: Drawer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3307,6 +3433,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1406898387}
   m_Mesh: {fileID: 4300058, guid: 0ccd472cba226de41b565ef0ab256ed8, type: 3}
+--- !u!65 &1406898391
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406898387}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5023642, y: 0.29740006, z: 0.117400005}
+  m_Center: {x: -0.11818453, y: -0.00000071525574, z: -0.00000011734664}
 --- !u!1 &1461196167
 GameObject:
   m_ObjectHideFlags: 0
@@ -4306,7 +4445,7 @@ GameObject:
   - component: {fileID: 1900678637}
   - component: {fileID: 1900678639}
   - component: {fileID: 1900678640}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Image
   m_TagString: PlayerAim
   m_Icon: {fileID: 0}
@@ -4397,7 +4536,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
 --- !u!1 &1908508479 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1893871558916252591, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
@@ -6017,7 +6156,7 @@ GameObject:
   - component: {fileID: 7598502356099793813}
   - component: {fileID: 7598502356102067785}
   - component: {fileID: 7598502356102067784}
-  m_Layer: 12
+  m_Layer: 11
   m_Name: Drawer1
   m_TagString: Drawer
   m_Icon: {fileID: 0}
