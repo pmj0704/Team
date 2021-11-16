@@ -11,6 +11,7 @@ TagManager:
   - PlayerAim
   - Drawer
   - Wall
+  - Speaker
   layers:
   - Default
   - TransparentFX

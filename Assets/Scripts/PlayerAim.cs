@@ -29,9 +29,17 @@ public class PlayerAim : MonoBehaviour
                 }
             }
             if (playerAim.collider.tag == "Untagged")
-            {
+            { 
                 Debug.Log("물체감지");
             }
+            if (playerAim.collider.tag == "Speaker")
+            {
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    GameManager.Instance.hasSpeaker++;
+                }
+            }
+
         }
     }
 }
