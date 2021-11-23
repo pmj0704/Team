@@ -12,6 +12,8 @@ TagManager:
   - Drawer
   - Wall
   - Drawer1
+  - Speaker
+  - Piggy
   layers:
   - Default
   - TransparentFX
