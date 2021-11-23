@@ -41,6 +41,7 @@ public class PlayerAim : MonoBehaviour
                 if(Input.GetKeyDown(KeyCode.F))
                 {
                     GameManager.Instance.hasSpeaker++;
+                    if (GameManager.Instance.repeatTime == 4 && !GameManager.Instance.hasKey) key.gameObject.SetActive(true);
                 }
             }
             if (playerAim.collider.tag == "Untagged")
