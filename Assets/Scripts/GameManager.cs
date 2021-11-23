@@ -100,6 +100,7 @@ public class GameManager : MonoSingleton<GameManager>
         Key.KeyPos(repeatTime);
         textOff = true;
         Key.inDraweBool();
+        hasSpeaker = 0;
     }
     private void CheckWait()
     {
