@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class HeadSetPlayer : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject onOffText;
+    [SerializeField]
+    private GameObject light;
+
+    private bool headSetOnOff = false;
+
     private AudioSource musicPlayer;
     public AudioClip headSetMusic;
 
@@ -15,7 +22,7 @@ public class HeadSetPlayer : MonoBehaviour
 
     private void Update()
     {
-        if(GameManager.Instance.hasSpeaker % 2 == 0 ? true : false)
+        if (GameManager.Instance.hasSpeaker % 2 == 0 ? true : false)
         {
             musicPlayer.volume = .5f;
         }
@@ -25,6 +32,24 @@ public class HeadSetPlayer : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "PlayerAim")
+        {
+            headSetOnOff = true;
+            onOffText.SetActive(headSetOnOff);
+            light.SetActive(headSetOnOff);
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "PlayerAim")
+        {
+            headSetOnOff = false;
+            onOffText.SetActive(headSetOnOff);
+            light.SetActive(headSetOnOff);
+        }
+    }
 
     public void SoundPlay(AudioClip audioClip, AudioSource audioSource)
     {
@@ -34,5 +59,5 @@ public class HeadSetPlayer : MonoBehaviour
         audioSource.time = 0;
         audioSource.Play();
     }
-
 }
+    

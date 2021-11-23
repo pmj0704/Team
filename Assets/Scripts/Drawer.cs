@@ -33,21 +33,35 @@ public class Drawer : MonoBehaviour
 
         if (isClosed)
         {
-            while(transform.position.z >= (targetpos.z - 0.1f)|| transform.position.x >= (oriTargetpos.x - 0.1f))
+            while (true)
             {
                 transform.position = Vector3.MoveTowards(transform.position, targetpos, 5 * Time.deltaTime);
                 yield return new WaitForSeconds(0f);
+                Debug.Log(transform.position.z);
+                if((int)transform.position.z <= (int)targetpos.z)
+                {
+                    break;
+                }
             }
-            yield return new WaitForSeconds(0f);
+
+            Debug.Log("1");
+            Debug.Log(transform.position.z);
+
+        yield return new WaitForSeconds(0f);
             isClosed = false;
         }
         else
         {
-            while (transform.position.z <= (oriTargetpos.z + 0.1f) || transform.position.x <= (oriTargetpos.x  + 0.1f))
+            while (true)
             {
                 transform.position = Vector3.MoveTowards(transform.position, oriTargetpos, 5 * Time.deltaTime);
                 yield return new WaitForSeconds(0f);
+                if(transform.position.z >= oriTargetpos.z)
+                {
+                    break;
+                }
             }
+            Debug.Log("2");
             yield return new WaitForSeconds(0f);
             isClosed = true;
         }
@@ -56,13 +70,13 @@ public class Drawer : MonoBehaviour
     {
         if (Z == 1 && Fst)
         {
+            Debug.Log("3");
             targetpos = new Vector3(transform.position.x, transform.position.y, transform.position.z - 3);
         }
-        else if(Fst)
+        else if(Z != 1 && Fst)
         {
             targetpos = new Vector3(transform.position.x - 3, transform.position.y, transform.position.z);
         }
-        Fst = false;
         StartCoroutine(OpenAndClose());
     }
 }
