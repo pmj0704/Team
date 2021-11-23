@@ -40,12 +40,17 @@ public class GameManager : MonoSingleton<GameManager>
     bool textOff = true;
     private void Start()
     {
+        Key.KeyPos(repeatTime);
         Cursor.visible = false;
         CheckWait();
         IFText.text = inform[repeatTime];
     }
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+
+        }
         if (timerReset == false)
         {
             second += Time.deltaTime;
