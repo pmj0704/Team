@@ -32,7 +32,6 @@ public class HeadSetPlayer : MonoBehaviour
         }
     }
 
-
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "PlayerAim")
