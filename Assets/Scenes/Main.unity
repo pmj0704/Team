@@ -1554,7 +1554,14 @@ MonoBehaviour:
   - Press 'Shift' to lay down.
   - Press 'F' to open the drawer
   - Press 'F' to turn off the music
-  - 
+  - Try to be normal
+  - Well, the ceiling seems high
+  - Well, the ceiling seems high
+  - Well, the ceiling seems high
+  - Press 'Shift' to lay down.
+  - Press 'F' to open the drawer
+  - Press 'F' to turn off the music
+  - Try to be normal
 --- !u!4 &502174482
 Transform:
   m_ObjectHideFlags: 0
@@ -3548,6 +3555,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3071408503730013677, guid: 796e96b43173f3f49a1ad238649bfd67, type: 3}
+      propertyPath: key
+      value: 
+      objectReference: {fileID: 1519724175}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 796e96b43173f3f49a1ad238649bfd67, type: 3}
 --- !u!1 &1339890674
@@ -5922,7 +5933,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh127568
+  m_Name: pb_Mesh133284
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

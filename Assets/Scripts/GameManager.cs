@@ -42,7 +42,7 @@ public class GameManager : MonoSingleton<GameManager>
     {
         Key.KeyPos(repeatTime);
         Cursor.visible = false;
-        CheckWait();
+        checkWait();
         IFText.text = inform[repeatTime];
     }
     void Update()
@@ -73,7 +73,7 @@ public class GameManager : MonoSingleton<GameManager>
             hour = 0;
             timerReset = false;
         }
-        CheckWait();
+        checkWait();
         if (Input.GetMouseButtonDown(1))
         {
             IFText.gameObject.SetActive(false);
@@ -96,6 +96,7 @@ public class GameManager : MonoSingleton<GameManager>
     public void NextStage()
     {
         repeatTime++;
+        
         movePlayer();
         fadeCamera();
         inventoryKey();
@@ -106,22 +107,30 @@ public class GameManager : MonoSingleton<GameManager>
         textOff = true;
         Key.inDraweBool();
         hasSpeaker = 0;
+        checkEvent();
     }
-    private void CheckWait()
+    private void checkEvent()
+    {
+        if(repeatTime == 4)
+        {
+            Key.gameObject.SetActive(false);
+        }
+    }
+    private void checkWait()
     {
         switch (repeatTime)
         {
             case 2:
             case 3:
             case 4:
-                WaitKey(15);
+                waitKey(15);
                 break;
             default:
                 return;
                 break;
         }
     }
-    private void WaitKey(int sec)
+    private void waitKey(int sec)
     {
         if (second > sec && textOff && !hasKey)
         {
