@@ -1485,6 +1485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasKey: 0
+  hasSpeaker: 0
   repeatTime: 0
   drawer: {fileID: 7598502356102000784}
   Key: {fileID: 1519724175}
@@ -1492,7 +1493,9 @@ MonoBehaviour:
   playerTransform: {fileID: 964199340}
   fadingCamera: {fileID: 1746306753}
   Respawn: {fileID: 729499025}
+  IFText: {fileID: 0}
   timerText: {fileID: 1226207002}
+  inform: []
 --- !u!4 &502174482
 Transform:
   m_ObjectHideFlags: 0
@@ -4537,6 +4540,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 2048
+  key: {fileID: 0}
 --- !u!1 &1908508479 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1893871558916252591, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
@@ -6016,6 +6020,7 @@ GameObject:
   - component: {fileID: 7598502356101702863}
   - component: {fileID: 7598502356111498501}
   - component: {fileID: 7598502356102000784}
+  - component: {fileID: 7598502356102000785}
   m_Layer: 7
   m_Name: Chest of drawers
   m_TagString: Untagged
@@ -6035,16 +6040,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e754363c2f5fe4aac239edf9a7d679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Drawers:
-  - {fileID: 7598502356102067783}
-  - {fileID: 7598502356102012007}
-  - {fileID: 7598502356102016953}
-  - {fileID: 7598502356101961025}
-  - {fileID: 7598502356101908009}
-  - {fileID: 7598502356101985593}
-  - {fileID: 7598502356101988957}
-  - {fileID: 7598502356102084119}
-  - {fileID: 187637726}
+  isClosed: 1
+  includeKey: 0
+--- !u!65 &7598502356102000785
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7598502356102000783}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7598502356102012007
 GameObject:
   m_ObjectHideFlags: 0

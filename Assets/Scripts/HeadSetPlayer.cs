@@ -15,7 +15,7 @@ public class HeadSetPlayer : MonoBehaviour
 
     private void Update()
     {
-        if(GameManager.Instance.hasSpeaker % 2 == 0)
+        if(GameManager.Instance.hasSpeaker % 2 == 0 ? true : false)
         {
             musicPlayer.volume = .5f;
         }
