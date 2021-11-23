@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class Move : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class Move : MonoBehaviour
     private Camera theCamera;
 
     private Rigidbody myRigid;
+
+    public VideoPlayer videoPlayer;
 
     private bool IsJumping;
     private bool IsLaying= false;
@@ -74,6 +77,8 @@ public class Move : MonoBehaviour
 
 
     }
+
+
 
     //private void Jump()
     //{
@@ -146,4 +151,15 @@ public class Move : MonoBehaviour
         theCamera.transform.localEulerAngles = new Vector3(currentCameraRotationX, 0f, 0f);
     }
 
+    private void TvOff()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            videoPlayer.loopPointReached += EndReached;
+        }
+    }
+    void EndReached(UnityEngine.Video.VideoPlayer vp)
+{
+    vp.playbackSpeed = vp.playbackSpeed / 10.0F;
+}
 }
