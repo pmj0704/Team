@@ -36,6 +36,13 @@ public class PlayerAim : MonoBehaviour
                     playerAim.collider.GetComponent<Drawer>().OpenAndCloseF(2);
                 }
             }
+            if (playerAim.collider.tag == "Speaker")
+            {
+                if(Input.GetKeyDown(KeyCode.F))
+                {
+                    GameManager.Instance.hasSpeaker++;
+                }
+            }
             if (playerAim.collider.tag == "Untagged")
             {
                 Debug.Log("물체감지");
