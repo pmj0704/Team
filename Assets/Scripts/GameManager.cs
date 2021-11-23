@@ -28,8 +28,6 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField]
     private Text IFText;
 
-    [SerializeField]
-    private Text timerText;
 
     private float second = 1;
     private float minute = 0;
@@ -42,6 +40,7 @@ public class GameManager : MonoSingleton<GameManager>
     bool textOff = true;
     private void Start()
     {
+        Cursor.visible = false;
         CheckWait();
         IFText.text = inform[repeatTime];
     }
@@ -60,7 +59,6 @@ public class GameManager : MonoSingleton<GameManager>
                 minute = 0;
                 hour++;
             }
-            timerText.text = string.Format("{0:00} : {1:00} : {2:00}", hour, minute, second);
         }
         else
         {
