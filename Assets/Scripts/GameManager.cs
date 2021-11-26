@@ -9,6 +9,8 @@ public class GameManager : MonoSingleton<GameManager>
     public bool hasKey = false;
     [HideInInspector]
     public int hasSpeaker = 0;
+    [HideInInspector]
+    public int hasTV = 0;
 
 
     [HideInInspector]
