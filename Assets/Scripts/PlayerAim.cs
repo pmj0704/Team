@@ -7,8 +7,13 @@ public class PlayerAim : MonoBehaviour
     RaycastHit playerAim;
     float maxDistance = 15f;
     public LayerMask layerMask;
+
     [SerializeField]
     private GetKey key;
+
+    private int tvOnOff = 0;
+    private bool tvSeting = false;
+
 
     private void Start()
     {
@@ -42,6 +47,13 @@ public class PlayerAim : MonoBehaviour
                 {
                     GameManager.Instance.hasSpeaker++;
                     if (GameManager.Instance.repeatTime == 4 && !GameManager.Instance.hasKey) key.gameObject.SetActive(true);
+                }
+            }
+            if (playerAim.collider.tag == "Tv")
+            {
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    GameManager.Instance.hasTV++;
                 }
             }
             if (playerAim.collider.tag == "Untagged")

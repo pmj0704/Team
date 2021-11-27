@@ -1,21 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Video;
 
 public class TV : MonoBehaviour
 {
-    public VideoPlayer videoPlayer;
-    
-    void Update()
+    [SerializeField]
+    private GameObject onOffText;
+
+    private bool textOnOff = false; 
+    private bool tvOnOff = false;
+
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (GameManager.Instance.hasTV % 2 == 0)
         {
-            videoPlayer.loopPointReached += EndReached;
+            tvOnOff = true;
+            transform.GetChild(0).gameObject.SetActive(tvOnOff);
+        }
+        else
+        {
+            tvOnOff = false;
+            transform.GetChild(0).gameObject.SetActive(tvOnOff);
         }
     }
-    void EndReached(UnityEngine.Video.VideoPlayer vp)
+
+    private void OnTriggerStay(Collider other)
     {
-        vp.playbackSpeed = vp.playbackSpeed / 10.0F;
+        if (other.gameObject.tag == "PlayerAim")
+        {
+            textOnOff = true;
+            onOffText.SetActive(textOnOff);
+        }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "PlayerAim")
+        {
+            textOnOff = false;
+            onOffText.SetActive(textOnOff);
+        }
+    }
+
 }
