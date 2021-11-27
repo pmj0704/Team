@@ -53,7 +53,7 @@ public class PlayerAim : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    GameManager.Instance.hasTV++;
+                    GameManager.Instance.TVoff = !GameManager.Instance.TVoff;
                 }
             }
             if (playerAim.collider.tag == "Untagged")

@@ -9,8 +9,8 @@ public class GameManager : MonoSingleton<GameManager>
     public bool hasKey = false;
     [HideInInspector]
     public int hasSpeaker = 0;
-    [HideInInspector]
-    public int hasTV = 0;
+    //[HideInInspector]
+    public bool TVoff = true;
 
 
     [HideInInspector]
@@ -29,7 +29,10 @@ public class GameManager : MonoSingleton<GameManager>
     private Transform Respawn;
     [SerializeField]
     private Text IFText;
-
+    [SerializeField]
+    private Transform SmileObj;
+    [SerializeField]
+    private Material[] smileMats;
 
     private float second = 1;
     private float minute = 0;

@@ -12,7 +12,7 @@ public class TV : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.Instance.hasTV % 2 == 0)
+        if (!GameManager.Instance.TVoff)
         {
             tvOnOff = true;
             transform.GetChild(0).gameObject.SetActive(tvOnOff);
