@@ -1565,7 +1565,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh74502
+  m_Name: pb_Mesh20182
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2713,7 +2713,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Press \"F\" to \nSpeaker On / Off"
+  m_text: 'Press "F" to turn the
+
+    television On / Off'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2747,8 +2749,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -3530,16 +3532,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3513672964975195839}
-  m_LocalRotation: {x: 0.6789962, y: -0.64754134, z: -0.20352277, w: 0.27970156}
-  m_LocalPosition: {x: 0, y: 0, z: 0.0007642469}
+  m_LocalRotation: {x: 0.68313587, y: -0.7216512, z: -0.034728922, w: 0.10648383}
+  m_LocalPosition: {x: 0, y: 0, z: 0.00138}
   m_LocalScale: {x: 0.0100000035, y: 0.009999999, z: 0.010000002}
   m_Children: []
   m_Father: {fileID: 3513672965821883806}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 173.324, y: 40.014008, z: 89.716}
+  m_LocalEulerAnglesHint: {x: 174.528, y: 11.656998, z: 93.7}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0014408976, y: -0.0023400483}
+  m_AnchoredPosition: {x: 0.00211, y: -0.00202}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3513672964975195837
@@ -3562,7 +3564,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Press \"F\" to \nSpeaker On / Off"
+  m_text: '
+
+    Press "F" to turn the
+
+    Speaker On / Off'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3596,8 +3602,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -3651,7 +3657,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &3513672965152939320
 GameObject:
   m_ObjectHideFlags: 0
