@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 public class GameManager : MonoSingleton<GameManager>
 {
     [HideInInspector]
@@ -36,6 +36,9 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField]
     private Vector3[] roomPos;
 
+    [SerializeField]
+    private TMP_Text Welcome;
+
     private float second = 1;
     private float minute = 0;
     private float hour = 0;
@@ -43,10 +46,16 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField]
     private string[] inform;
     public Light light;
+    [SerializeField]
+    private Light light2;
     bool textOff = true;
     bool thirteen = true;
     private void Start()
     {
+        if(repeatTime == 9)Respawn.position = roomPos[1];
+        if(repeatTime == 15)Respawn.position = roomPos[2];
+
+        playerTransform.position = Respawn.position;
         if(repeatTime != 11)smileMats[3].mainTexture = smileMats[4].mainTexture;
         if(repeatTime != 7)smileMats[2].mainTexture = smileMats[1].mainTexture;
         Key.KeyPos(repeatTime);
@@ -130,43 +139,92 @@ public class GameManager : MonoSingleton<GameManager>
         {
             case 2:
             case 3:
-            //case 4:
-            //    waitKey(15);
-            //    break;
+            case 4:
+                waitKey(15);
+                break;
             case 7:
+                waitKey(15);
                 smileMats[2].mainTexture = smileMats[0].mainTexture;
                 break;
             case 8:
+                waitKey(15);
                 smileMats[2].mainTexture = smileMats[1].mainTexture;
                 break;
             case 9:
+                waitKey(15);
                 Respawn.position = roomPos[1];
                 break;
             case 10:
+                waitKey(15);
                 Respawn.position = roomPos[0];
                 break;
             case 11:
+                waitKey(15);
                 smileMats[3].mainTexture = smileMats[2].mainTexture;
                 break;
             case 12:
+                waitKey(15);
                 smileMats[3].mainTexture = smileMats[4].mainTexture;
                 break;
             case 13:
+                waitKey(15);
                 if (thirteen)
                 {
                     light.color = Color.black;
                     TVoff = false;
                     thirteen = false;
+                    Welcome.text = "Escape";
                 }
                 break;
+            case 14:
+                waitKey(15);
+                StartCoroutine(RedLight());
+                Welcome.text = "Welcome";
+                break;
+            case 15:
+                Respawn.position = roomPos[2];
+                break;
+            case 16:
+                Respawn.position = roomPos[0];
+                StartCoroutine(room2());
+                break;
             default:
-                return;
                 break;
         }
     }
-    
-    private void waitKey(int sec)
+    private IEnumerator RedLight()
     {
+        if (!thirteen)
+        {
+            light.color = Color.red;
+            yield return new WaitForSeconds(.3f);
+            light.color = Color.white;
+            yield return new WaitForSeconds(.3f);
+            light.color = Color.red;
+            yield return new WaitForSeconds(.3f);
+            light.color = Color.white;
+            yield return new WaitForSeconds(.3f);
+            light.color = Color.red;
+            yield return new WaitForSeconds(.3f);
+            light.color = Color.white;
+            yield return new WaitForSeconds(.3f);
+            thirteen = true;
+        }
+    }
+
+    private IEnumerator room2()
+    {
+        if (thirteen)
+        {
+            yield return new WaitForSeconds(5f);
+            light2.gameObject.SetActive(true);
+            thirteen = false;
+        }
+    }
+
+    private void waitKey(float sec)
+    {
+        Debug.Log("waitKey");
         if (second > sec && textOff && !hasKey)
         {
             IFText.gameObject.SetActive(true);

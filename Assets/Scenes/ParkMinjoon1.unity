@@ -385,9 +385,10 @@ MonoBehaviour:
   - {x: -2.5, y: 12, z: 30}
   - {x: 96, y: 12, z: 125}
   - {x: 195, y: 12, z: 225}
+  Welcome: {fileID: 945056355889102775}
   inform:
-  - 
-  - 
+  - ' '
+  - ' '
   - Press 'Shift' to lay down.
   - Press 'F' to open the drawer
   - Press 'F' to turn off the music
@@ -396,11 +397,16 @@ MonoBehaviour:
   - Well, the ceiling seems high
   - Well, the ceiling seems high
   - Press 'Shift' to lay down.
-  - 
-  - 
+  - ' '
+  - ' '
   - Presss 'F' to turn on the TV
-  - 
+  - ' '
+  - Press 'F' to open the drawer
+  - ' '
+  - ' '
+  - ' '
   light: {fileID: 797896877600785481}
+  light2: {fileID: 1231765212317667077}
 --- !u!4 &502174482
 Transform:
   m_ObjectHideFlags: 0
@@ -987,7 +993,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964199335}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5, y: 12, z: 30}
+  m_LocalPosition: {x: 194.1, y: 12, z: 224.5}
   m_LocalScale: {x: 5, y: 20, z: 5}
   m_Children:
   - {fileID: 1746306752}
@@ -1313,7 +1319,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-11892
+  m_Name: pb_Mesh167312
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1830,7 +1836,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-13586
+  m_Name: pb_Mesh167368
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1994,7 +2000,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20972
+  m_Name: pb_Mesh166924
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2283,7 +2289,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 74
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2519,15 +2525,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1893871558916252587, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.64
+      value: 212.18
       objectReference: {fileID: 0}
     - target: {fileID: 1893871558916252587, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.63
+      value: 4.24
       objectReference: {fileID: 0}
     - target: {fileID: 1893871558916252587, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 42.25
+      value: 236.4
       objectReference: {fileID: 0}
     - target: {fileID: 1893871558916252587, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2555,7 +2561,7 @@ PrefabInstance:
       objectReference: {fileID: 142619601}
     - target: {fileID: 1893871558916252628, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: stageKey.Array.size
-      value: 14
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1893871558916252628, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: stageKey.Array.data[0]
@@ -2699,15 +2705,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1893871558916252628, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: stageKey.Array.data[11].x
-      value: -1.67
+      value: -7.909999
       objectReference: {fileID: 0}
     - target: {fileID: 1893871558916252628, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: stageKey.Array.data[11].y
-      value: 8.1
+      value: 7.928162
       objectReference: {fileID: 0}
     - target: {fileID: 1893871558916252628, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: stageKey.Array.data[11].z
-      value: 50.42
+      value: 43.81
       objectReference: {fileID: 0}
     - target: {fileID: 1893871558916252628, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: stageKey.Array.data[12].x
@@ -2723,15 +2729,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1893871558916252628, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: stageKey.Array.data[13].x
-      value: -6.64
+      value: -1.19
       objectReference: {fileID: 0}
     - target: {fileID: 1893871558916252628, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: stageKey.Array.data[13].y
-      value: 7.63
+      value: 9.94
       objectReference: {fileID: 0}
     - target: {fileID: 1893871558916252628, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: stageKey.Array.data[13].z
-      value: 42.25
+      value: 50.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893871558916252628, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+      propertyPath: stageKey.Array.data[14].x
+      value: 18.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893871558916252628, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+      propertyPath: stageKey.Array.data[14].y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893871558916252628, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+      propertyPath: stageKey.Array.data[14].z
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893871558916252628, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+      propertyPath: stageKey.Array.data[15].x
+      value: 9.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893871558916252628, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+      propertyPath: stageKey.Array.data[15].y
+      value: 0.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893871558916252628, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+      propertyPath: stageKey.Array.data[15].z
+      value: 29.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893871558916252628, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+      propertyPath: stageKey.Array.data[16].x
+      value: 18.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893871558916252628, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+      propertyPath: stageKey.Array.data[16].y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893871558916252628, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+      propertyPath: stageKey.Array.data[16].z
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893871558916252628, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+      propertyPath: stageKey.Array.data[17].x
+      value: 212.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893871558916252628, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+      propertyPath: stageKey.Array.data[17].y
+      value: 4.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893871558916252628, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+      propertyPath: stageKey.Array.data[17].z
+      value: 236.4
       objectReference: {fileID: 0}
     - target: {fileID: 1893871558916252629, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: m_Constraints
@@ -9350,7 +9404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1231765212326637024
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12928,7 +12982,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1480419125249928689
 Transform:
   m_ObjectHideFlags: 0
@@ -13390,19 +13444,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1480419125835558808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480419125835558810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfc742359c74e0e488c20ce9736633e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onOffText: {fileID: 2276907858739576712}
 --- !u!65 &1480419125835558809
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13425,7 +13466,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1480419125835558811}
-  - component: {fileID: 1480419125835558808}
   - component: {fileID: 1480419125835558809}
   m_Layer: 11
   m_Name: TvEffect
