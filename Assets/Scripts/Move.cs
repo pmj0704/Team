@@ -25,7 +25,6 @@ public class Move : MonoBehaviour
 
     private Rigidbody myRigid;
 
-    public VideoPlayer videoPlayer;
 
     private bool IsJumping;
     private bool IsLaying= false;
@@ -151,15 +150,5 @@ public class Move : MonoBehaviour
         theCamera.transform.localEulerAngles = new Vector3(currentCameraRotationX, 0f, 0f);
     }
 
-    private void TvOff()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            videoPlayer.loopPointReached += EndReached;
-        }
-    }
-    void EndReached(UnityEngine.Video.VideoPlayer vp)
-{
-    vp.playbackSpeed = vp.playbackSpeed / 10.0F;
-}
+    
 }
