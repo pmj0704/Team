@@ -52,17 +52,14 @@ public class GameManager : MonoSingleton<GameManager>
     bool thirteen = true;
     private void Start()
     {
-<<<<<<< HEAD
         if(repeatTime == 9)Respawn.position = roomPos[1];
         if(repeatTime == 15)Respawn.position = roomPos[2];
 
         playerTransform.position = Respawn.position;
         if(repeatTime != 11)smileMats[3].mainTexture = smileMats[4].mainTexture;
         if(repeatTime != 7)smileMats[2].mainTexture = smileMats[1].mainTexture;
-=======
         if (repeatTime != 11) smileMats[3].mainTexture = smileMats[4].mainTexture;
         if (repeatTime != 7) smileMats[2].mainTexture = smileMats[1].mainTexture;
->>>>>>> 82a33225cf25050719d4a759301f60a3ac457788
         Key.KeyPos(repeatTime);
         Cursor.visible = false;
         checkWait();
@@ -182,22 +179,16 @@ public class GameManager : MonoSingleton<GameManager>
                 }
                 break;
             case 14:
-<<<<<<< HEAD
                 waitKey(15);
-=======
->>>>>>> 82a33225cf25050719d4a759301f60a3ac457788
                 StartCoroutine(RedLight());
                 Welcome.text = "Welcome";
                 break;
             case 15:
-<<<<<<< HEAD
                 Respawn.position = roomPos[2];
                 break;
             case 16:
                 Respawn.position = roomPos[0];
                 StartCoroutine(room2());
-=======
->>>>>>> 82a33225cf25050719d4a759301f60a3ac457788
                 break;
             default:
                 break;
@@ -205,7 +196,6 @@ public class GameManager : MonoSingleton<GameManager>
     }
     private IEnumerator RedLight()
     {
-<<<<<<< HEAD
         if (!thirteen)
         {
             light.color = Color.red;
@@ -235,13 +225,12 @@ public class GameManager : MonoSingleton<GameManager>
     }
 
     private void waitKey(float sec)
-=======
+    {
         light.color = Color.red;
         yield return new WaitForSeconds(.3f);
         light.color = Color.white;
     }
     private void waitKey(int sec)
->>>>>>> 82a33225cf25050719d4a759301f60a3ac457788
     {
         Debug.Log("waitKey");
         if (second > sec && textOff && !hasKey)
