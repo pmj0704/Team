@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoSingleton<GameManager>
 {
@@ -13,8 +14,7 @@ public class GameManager : MonoSingleton<GameManager>
     public bool TVoff = true;
 
 
-    [HideInInspector]
-    public int repeatTime = 0;
+    public int repeatTime = 6;
 
     public Drawer drawer;
     [SerializeField]
@@ -30,21 +30,25 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField]
     private Text IFText;
     [SerializeField]
-    private Transform SmileObj;
+    private Transform Room;
     [SerializeField]
     private Material[] smileMats;
+    [SerializeField]
+    private Vector3[] roomPos;
 
     private float second = 1;
     private float minute = 0;
     private float hour = 0;
-
     private bool timerReset = false;
     [SerializeField]
     private string[] inform;
-
+    public Light light;
     bool textOff = true;
+    bool thirteen = true;
     private void Start()
     {
+        if(repeatTime != 11)smileMats[3].mainTexture = smileMats[4].mainTexture;
+        if(repeatTime != 7)smileMats[2].mainTexture = smileMats[1].mainTexture;
         Key.KeyPos(repeatTime);
         Cursor.visible = false;
         checkWait();
@@ -54,7 +58,8 @@ public class GameManager : MonoSingleton<GameManager>
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-
+            SceneManager.LoadScene("UI");
+            Cursor.visible = true;
         }
         if (timerReset == false)
         {
@@ -72,7 +77,6 @@ public class GameManager : MonoSingleton<GameManager>
         }
         else
         {
-            Debug.Log("Á¾·á");
             second = 0;
             minute = 0;
             hour = 0;
@@ -83,7 +87,6 @@ public class GameManager : MonoSingleton<GameManager>
         {
             IFText.gameObject.SetActive(false);
         }
-
     }
 
     public void movePlayer()
@@ -114,23 +117,9 @@ public class GameManager : MonoSingleton<GameManager>
         hasSpeaker = 0;
         checkEvent();
     }
-    public void LoadStage()
-    {
-        movePlayer();
-        fadeCamera();
-        inventoryKey();
-        timerReset = true;
-        IFText.text = inform[repeatTime];
-        IFText.gameObject.SetActive(false);
-        Key.KeyPos(repeatTime);
-        textOff = true;
-        Key.inDraweBool();
-        hasSpeaker = 0;
-        checkEvent();
-    }
     private void checkEvent()
     {
-        if(repeatTime == 4)
+        if(repeatTime == 4 || repeatTime == 12)
         {
             Key.gameObject.SetActive(false);
         }
@@ -141,15 +130,41 @@ public class GameManager : MonoSingleton<GameManager>
         {
             case 2:
             case 3:
-            case 4:
-                waitKey(15);
+            //case 4:
+            //    waitKey(15);
+            //    break;
+            case 7:
+                smileMats[2].mainTexture = smileMats[0].mainTexture;
+                break;
+            case 8:
+                smileMats[2].mainTexture = smileMats[1].mainTexture;
+                break;
+            case 9:
+                Respawn.position = roomPos[1];
+                break;
+            case 10:
+                Respawn.position = roomPos[0];
+                break;
+            case 11:
+                smileMats[3].mainTexture = smileMats[2].mainTexture;
+                break;
+            case 12:
+                smileMats[3].mainTexture = smileMats[4].mainTexture;
+                break;
+            case 13:
+                if (thirteen)
+                {
+                    light.color = Color.black;
+                    TVoff = false;
+                    thirteen = false;
+                }
                 break;
             default:
                 return;
                 break;
         }
     }
-
+    
     private void waitKey(int sec)
     {
         if (second > sec && textOff && !hasKey)

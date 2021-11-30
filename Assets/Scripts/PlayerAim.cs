@@ -53,7 +53,10 @@ public class PlayerAim : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.F))
                 {
+                    Debug.Log("TV");
                     GameManager.Instance.TVoff = !GameManager.Instance.TVoff;
+                    if (GameManager.Instance.repeatTime == 12 && !GameManager.Instance.hasKey) key.gameObject.SetActive(true);
+                    if (GameManager.Instance.repeatTime == 13) GameManager.Instance.light.color = Color.white;
                 }
             }
             if (playerAim.collider.tag == "Untagged")
