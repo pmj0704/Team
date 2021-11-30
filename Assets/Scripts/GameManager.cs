@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoSingleton<GameManager>
 {
@@ -54,7 +55,8 @@ public class GameManager : MonoSingleton<GameManager>
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-
+            SceneManager.LoadScene("UI");
+            Cursor.visible = true;
         }
         if (timerReset == false)
         {
@@ -83,7 +85,6 @@ public class GameManager : MonoSingleton<GameManager>
         {
             IFText.gameObject.SetActive(false);
         }
-
     }
 
     public void movePlayer()
