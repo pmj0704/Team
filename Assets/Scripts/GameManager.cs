@@ -114,6 +114,20 @@ public class GameManager : MonoSingleton<GameManager>
         hasSpeaker = 0;
         checkEvent();
     }
+    public void LoadStage()
+    {
+        movePlayer();
+        fadeCamera();
+        inventoryKey();
+        timerReset = true;
+        IFText.text = inform[repeatTime];
+        IFText.gameObject.SetActive(false);
+        Key.KeyPos(repeatTime);
+        textOff = true;
+        Key.inDraweBool();
+        hasSpeaker = 0;
+        checkEvent();
+    }
     private void checkEvent()
     {
         if(repeatTime == 4)
@@ -135,6 +149,7 @@ public class GameManager : MonoSingleton<GameManager>
                 break;
         }
     }
+
     private void waitKey(int sec)
     {
         if (second > sec && textOff && !hasKey)
