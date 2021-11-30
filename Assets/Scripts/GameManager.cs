@@ -14,8 +14,7 @@ public class GameManager : MonoSingleton<GameManager>
     public bool TVoff = true;
 
 
-    [HideInInspector]
-    public int repeatTime = 0;
+    public int repeatTime = 6;
 
     public Drawer drawer;
     [SerializeField]
@@ -31,7 +30,7 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField]
     private Text IFText;
     [SerializeField]
-    private Transform SmileObj;
+    private Transform Room;
     [SerializeField]
     private Material[] smileMats;
 
@@ -46,6 +45,8 @@ public class GameManager : MonoSingleton<GameManager>
     bool textOff = true;
     private void Start()
     {
+        if(repeatTime != 11)smileMats[3].mainTexture = smileMats[4].mainTexture;
+        if(repeatTime != 7)smileMats[2].mainTexture = smileMats[1].mainTexture;
         Key.KeyPos(repeatTime);
         Cursor.visible = false;
         checkWait();
@@ -74,7 +75,7 @@ public class GameManager : MonoSingleton<GameManager>
         }
         else
         {
-            Debug.Log("Á¾·á");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½");
             second = 0;
             minute = 0;
             hour = 0;
@@ -130,6 +131,30 @@ public class GameManager : MonoSingleton<GameManager>
             case 3:
             case 4:
                 waitKey(15);
+                break;
+            case 7:
+                smileMats[2].mainTexture = smileMats[0].mainTexture;
+                break;
+            case 8:
+                smileMats[2].mainTexture = smileMats[1].mainTexture;
+                break;
+            case 9:
+                for(int i =1; i < Room.childCount; i++)
+                {
+                    Room.GetChild(i).rotation = Quaternion.Euler(Room.GetChild(i).rotation.x, Room.GetChild(i).rotation.y, Room.GetChild(i).rotation.z + 90);
+                }
+                break;
+            case 10:
+                for (int i = 1; i < Room.childCount; i++)
+                {
+                    Room.GetChild(i).rotation = Quaternion.Euler(Room.GetChild(i).rotation.x, Room.GetChild(i).rotation.y, Room.GetChild(i).rotation.z - 90);
+                }
+                break;
+            case 11:
+                smileMats[3].mainTexture = smileMats[2].mainTexture;
+                break;
+            case 12:
+                smileMats[3].mainTexture = smileMats[4].mainTexture;
                 break;
             default:
                 return;
