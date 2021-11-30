@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 public class GameManager : MonoSingleton<GameManager>
 {
     [HideInInspector]
@@ -36,6 +36,9 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField]
     private Vector3[] roomPos;
 
+    [SerializeField]
+    private TMP_Text Welcome;
+
     private float second = 1;
     private float minute = 0;
     private float hour = 0;
@@ -47,8 +50,8 @@ public class GameManager : MonoSingleton<GameManager>
     bool thirteen = true;
     private void Start()
     {
-        if(repeatTime != 11)smileMats[3].mainTexture = smileMats[4].mainTexture;
-        if(repeatTime != 7)smileMats[2].mainTexture = smileMats[1].mainTexture;
+        if (repeatTime != 11) smileMats[3].mainTexture = smileMats[4].mainTexture;
+        if (repeatTime != 7) smileMats[2].mainTexture = smileMats[1].mainTexture;
         Key.KeyPos(repeatTime);
         Cursor.visible = false;
         checkWait();
@@ -56,7 +59,7 @@ public class GameManager : MonoSingleton<GameManager>
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene("UI");
             Cursor.visible = true;
@@ -64,12 +67,12 @@ public class GameManager : MonoSingleton<GameManager>
         if (timerReset == false)
         {
             second += Time.deltaTime;
-            if(second > 59)
+            if (second > 59)
             {
                 second = 0;
                 minute++;
             }
-            if(minute > 59)
+            if (minute > 59)
             {
                 minute = 0;
                 hour++;
@@ -104,21 +107,6 @@ public class GameManager : MonoSingleton<GameManager>
     public void NextStage()
     {
         repeatTime++;
-        
-        movePlayer();
-        fadeCamera();
-        inventoryKey();
-        timerReset = true;
-        IFText.text = inform[repeatTime];
-        IFText.gameObject.SetActive(false);
-        Key.KeyPos(repeatTime);
-        textOff = true;
-        Key.inDraweBool();
-        hasSpeaker = 0;
-        checkEvent();
-    }
-    public void LoadStage()
-    {
 
         movePlayer();
         fadeCamera();
@@ -132,9 +120,25 @@ public class GameManager : MonoSingleton<GameManager>
         hasSpeaker = 0;
         checkEvent();
     }
+
+    public void LoadStage()
+    {
+        movePlayer();
+        fadeCamera();
+        inventoryKey();
+        timerReset = true;
+        IFText.text = inform[repeatTime];
+        IFText.gameObject.SetActive(false);
+        Key.KeyPos(repeatTime);
+        textOff = true;
+        Key.inDraweBool();
+        hasSpeaker = 0;
+        checkEvent();
+    }
+
     private void checkEvent()
     {
-        if(repeatTime == 4 || repeatTime == 12)
+        if (repeatTime == 4 || repeatTime == 12)
         {
             Key.gameObject.SetActive(false);
         }
@@ -172,14 +176,26 @@ public class GameManager : MonoSingleton<GameManager>
                     light.color = Color.black;
                     TVoff = false;
                     thirteen = false;
+                    Welcome.text = "Escape";
                 }
+                break;
+            case 14:
+                StartCoroutine(RedLight());
+                Welcome.text = "Welcome";
+                break;
+            case 15:
                 break;
             default:
                 return;
                 break;
         }
     }
-    
+    private IEnumerator RedLight()
+    {
+        light.color = Color.red;
+        yield return new WaitForSeconds(.3f);
+        light.color = Color.white;
+    }
     private void waitKey(int sec)
     {
         if (second > sec && textOff && !hasKey)
@@ -188,7 +204,7 @@ public class GameManager : MonoSingleton<GameManager>
             Debug.Log(repeatTime);
             textOff = false;
         }
-        else if(!(second > sec) || hasKey)
+        else if (!(second > sec) || hasKey)
         {
             IFText.gameObject.SetActive(false);
         }
