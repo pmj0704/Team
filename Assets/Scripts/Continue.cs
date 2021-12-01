@@ -8,6 +8,10 @@ public class Continue : MonoBehaviour
     {
         SceneManager.LoadScene("Main");
     }
+    public void Quit()
+    {
+        Application.Quit();
+    }
   
 
 }

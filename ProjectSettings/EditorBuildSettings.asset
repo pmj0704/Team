@@ -8,13 +8,16 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/JeHyeongJu.unity
     guid: 253861f4ea28f9244b072c381ed60c93
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/UI.unity
     guid: 7dd01e08d7c93ac49a13099e7259a4c4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main.unity
     guid: 07a901a1446f0284b88e473942dd894f
+  - enabled: 1
+    path: Assets/Scenes/ParkMinjoon1.unity
+    guid: a2b59e9e7d4389d4bbf8fb74d5eb436f
   m_configObjects: {}
