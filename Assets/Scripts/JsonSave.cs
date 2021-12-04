@@ -21,9 +21,6 @@ public class JsonSave : MonoBehaviour
 
     public void Save()
     {
-        Debug.Log("세이브");
-        Debug.Log(GameManager.Instance.repeatTime);
-        Debug.Log("/");
 
 
         saveData.saveRepeatTime = GameManager.Instance.repeatTime;
@@ -34,14 +31,10 @@ public class JsonSave : MonoBehaviour
 
         File.WriteAllText(SAVE_DATA_DIRECTORY + SAVE_FILENAME, json);
 
-        Debug.Log("저장 완료");
-        Debug.Log(json);
     }
 
     public void Load()
     {
-        Debug.Log("로드");
-        Debug.Log(" / ");
 
         if (File.Exists(SAVE_DATA_DIRECTORY + SAVE_FILENAME))
         {
@@ -51,14 +44,11 @@ public class JsonSave : MonoBehaviour
 
             GameManager.Instance.repeatTime = saveData.saveRepeatTime;
 
-            Debug.Log(GameManager.Instance.repeatTime);
-            Debug.Log("로드 완료");
 
             GameManager.Instance.LoadStage();
         }
         else
         {
-            Debug.Log("세이브 파일이 없습니다.");
         }
     }
 }

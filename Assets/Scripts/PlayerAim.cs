@@ -30,7 +30,6 @@ public class PlayerAim : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    Debug.Log("서랍장오픈");
                     playerAim.collider.GetComponent<Drawer>().OpenAndCloseF(1);
                 }
             }
@@ -45,25 +44,37 @@ public class PlayerAim : MonoBehaviour
             {
                 if(Input.GetKeyDown(KeyCode.F))
                 {
-                    GameManager.Instance.hasSpeaker++;
-                    if (GameManager.Instance.repeatTime == 4 && !GameManager.Instance.hasKey) key.gameObject.SetActive(true);
+                    GameManager.Instance.hasSpeaker = !GameManager.Instance.hasSpeaker;
+                    if ((GameManager.Instance.repeatTime == 4 || GameManager.Instance.repeatTime == 18) && !GameManager.Instance.hasKey) key.gameObject.SetActive(true);
                 }
             }
             if (playerAim.collider.tag == "Tv")
             {
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    Debug.Log("TV");
-                    GameManager.Instance.TVoff = !GameManager.Instance.TVoff;
+                    GameManager.Instance.WelcomeF();
                     if (GameManager.Instance.repeatTime == 12 && !GameManager.Instance.hasKey) key.gameObject.SetActive(true);
                     if (GameManager.Instance.repeatTime == 13) GameManager.Instance.light.color = Color.white;
-                }
+                    if (GameManager.Instance.repeatTime == 26)
+                    {
+                        StartCoroutine(Endding());
+                        GameManager.Instance.TVoff = false;
+                    }
+                    else
+                    {
+                        GameManager.Instance.TVoff = !GameManager.Instance.TVoff;
+                    }
+
+                    }
             }
             if (playerAim.collider.tag == "Untagged")
             {
-                Debug.Log("물체감지");
             }
         }
     }
-
+    private IEnumerator Endding()
+    {
+        yield return new WaitForSeconds(9f);
+        GameManager.Instance.End();
+    }
 }

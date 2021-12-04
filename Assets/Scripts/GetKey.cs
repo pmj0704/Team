@@ -22,7 +22,6 @@ public class GetKey : MonoBehaviour
         {
             if (inDrawer)
             {
-                Debug.Log(other.tag);
                 if (!(drawer.isClosed))
                 {
                     inventoryText = true;

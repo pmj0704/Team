@@ -106,7 +106,6 @@ public class Move : MonoBehaviour
         {
             if(!IsLaying)
             {
-                Debug.Log("Lay");
                 IsLaying = true;
                 theCamera.transform.localPosition = LayPos;
             }
