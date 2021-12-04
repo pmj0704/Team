@@ -1,1 +1,1 @@
-{"saveRepeatTime":0}
+{"saveRepeatTime":0,"savecurrentSound":false,"savecurrentTv":true}

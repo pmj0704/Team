@@ -24,6 +24,8 @@ public class JsonSave : MonoBehaviour
 
 
         saveData.saveRepeatTime = GameManager.Instance.repeatTime;
+        saveData.savecurrentSound = GameManager.Instance.currentsound;
+        saveData.savecurrentTv = GameManager.Instance.currentTv;
         // repeatTime저장 
 
         // 최종 전체 저장
@@ -43,7 +45,8 @@ public class JsonSave : MonoBehaviour
             saveData = JsonUtility.FromJson<SaveData>(loadJson);
 
             GameManager.Instance.repeatTime = saveData.saveRepeatTime;
-
+            GameManager.Instance.currentsound = saveData.savecurrentSound;
+            GameManager.Instance.currentTv = saveData.savecurrentTv;
 
             GameManager.Instance.LoadStage();
         }

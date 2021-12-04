@@ -19,7 +19,8 @@ public class GameManager : MonoSingleton<GameManager>
     private VideoClip TestSbj;
     [SerializeField]
     private VideoClip zzz;
-    public int repeatTime = 6;
+    [HideInInspector]
+    public int repeatTime = 0;
 
     public Drawer drawer;
     [SerializeField]
@@ -78,11 +79,19 @@ public class GameManager : MonoSingleton<GameManager>
     private bool room23 = true;
     [SerializeField]
     private GameObject mainMenu;
+
+    [HideInInspector]
+    public bool currentsound = false;
+    [HideInInspector]
+    public bool currentTv = true;
+
+    [HideInInspector]
+    public bool mainOn = true;
     private void Start()
     {
         Time.timeScale = 0;
-        hasSpeaker = false;
-        TVoff = true;  
+        hasSpeaker = currentsound;
+        TVoff = currentTv;  
     }
     public void StartGame()
     {
@@ -101,19 +110,22 @@ public class GameManager : MonoSingleton<GameManager>
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && !uiOn)
+        if(Input.GetKeyDown(KeyCode.Escape) && !uiOn && !mainOn)
         {
+            jsonSave.Save();
             respawning = true;
             Esc.SetActive(true);
             Cursor.visible = true;
             Time.timeScale = 0;
+            currentsound = hasSpeaker;
+            currentTv = TVoff;
             hasSpeaker = false;
             TVoff = true;
             uiOn = true;
-            monster.enabled = false;
-            voice.enabled = false;
+            monster.Pause();
+            voice.Pause();
         }
-        else if(Input.GetKeyDown(KeyCode.Escape) && uiOn)
+        else if(Input.GetKeyDown(KeyCode.Escape) && uiOn && !mainOn)
         {
             respawning = true;
             Esc.SetActive(false);
@@ -456,9 +468,10 @@ public class GameManager : MonoSingleton<GameManager>
     }
     public void Resume()
     {
-        hasSpeaker = false;
-        if(repeatTime == 20 || repeatTime == 21)voice.enabled = true;
-        if (repeatTime == 23) monster.enabled = true;
+        hasSpeaker = currentsound;
+        TVoff = currentTv;
+        if(repeatTime == 20 || repeatTime == 21)voice.Play();
+        if (repeatTime == 23) monster.Play();
     }
     public void WelcomeF()
     {
@@ -502,6 +515,7 @@ public class GameManager : MonoSingleton<GameManager>
     }
     public void End()
     {
+        mainOn = true;
         mainMenu.SetActive(true);
         respawning = true;
         Cursor.visible = true;

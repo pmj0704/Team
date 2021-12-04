@@ -33,7 +33,7 @@ public class HeadSetPlayer : MonoBehaviour
         }
         else
         {
-            if(!start)
+            if (!start)
             {
                 SoundStop(headSetMusic, musicPlayer);
                 start = true;
@@ -66,7 +66,6 @@ public class HeadSetPlayer : MonoBehaviour
         audioSource.Stop();
         audioSource.clip = audioClip;
         audioSource.loop = true;
-        audioSource.time = 0;
         audioSource.Play();
     }
     public void SoundStop(AudioClip audioClip, AudioSource audioSource)
@@ -74,7 +73,6 @@ public class HeadSetPlayer : MonoBehaviour
         audioSource.Stop();
         audioSource.clip = audioClip;
         audioSource.loop = true;
-        audioSource.time = 0;
     }
 }
     

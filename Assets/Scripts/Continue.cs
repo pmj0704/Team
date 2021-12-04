@@ -60,6 +60,8 @@ public class Continue : MonoBehaviour
         GameManager.Instance.repeatTime = -1;
         GameManager.Instance.NextStage();
         GameManager.Instance.jsonSave.Save();
+        Cursor.visible = false;
+        GameManager.Instance.mainOn = false;
         MainMenu.SetActive(false);
         Esc.SetActive(false);
         NewGameMsg.SetActive(false);
@@ -67,6 +69,7 @@ public class Continue : MonoBehaviour
     public void LoadGame()
     {
         Time.timeScale = 1;
+        Cursor.visible = false;
         GameManager.Instance.hasKey = false;
         GameManager.Instance.RespawnF();
         GameManager.Instance.RespawnTrue();
@@ -74,6 +77,7 @@ public class Continue : MonoBehaviour
         GameManager.Instance.Started = true;
         GameManager.Instance.StartGame();
         GameManager.Instance.jsonSave.Load();
+        GameManager.Instance.mainOn = false;
         MainMenu.SetActive(false);
         Esc.SetActive(false);
     }
@@ -88,6 +92,7 @@ public class Continue : MonoBehaviour
         Settings.SetActive(false);
         if(num == 1)
         {
+            GameManager.Instance.mainOn = true;
             MainMenu.SetActive(true);
         }
         else if(num == 2)
@@ -97,6 +102,7 @@ public class Continue : MonoBehaviour
     }
     public void SettingsF(int i)
     {
+        GameManager.Instance.mainOn = false;
         MainMenu.SetActive(false);
         Esc.SetActive(false);
         Settings.SetActive(true);
@@ -110,6 +116,7 @@ public class Continue : MonoBehaviour
     public void MainMenuF()
     {
         Esc.SetActive(false);
+            GameManager.Instance.mainOn = true;
         MainMenu.SetActive(true);
     }
 }
