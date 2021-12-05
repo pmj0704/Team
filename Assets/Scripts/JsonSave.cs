@@ -13,7 +13,7 @@ public class JsonSave : MonoBehaviour
 
     void Start()
     {
-        SAVE_DATA_DIRECTORY = Application.dataPath + "/Save/";
+        SAVE_DATA_DIRECTORY = Application.persistentDataPath + "/Save/";
 
         if (!Directory.Exists(SAVE_DATA_DIRECTORY)) // 해당 경로가 존재하지 않는다면
             Directory.CreateDirectory(SAVE_DATA_DIRECTORY); // 폴더 생성(경로 생성)

@@ -110,7 +110,11 @@ public class GameManager : MonoSingleton<GameManager>
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && !uiOn && !mainOn)
+        if(Input.GetKeyDown(KeyCode.W))
+        {
+            Cursor.visible = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Escape) && !uiOn && !mainOn)
         {
             jsonSave.Save();
             respawning = true;
