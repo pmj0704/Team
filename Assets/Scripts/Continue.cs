@@ -54,6 +54,7 @@ public class Continue : MonoBehaviour
         //    StartCoroutine(Error(ErrorText.gameObject));
         //}
         Time.timeScale = 1;
+        GameManager.Instance.hasKey = false;
         GameManager.Instance.Resume();
         GameManager.Instance.Started = true;
         GameManager.Instance.StartGame();

@@ -8,7 +8,19 @@ public class OpenDoor : MonoBehaviour
     private GameObject trueText;
     [SerializeField]
     private GameObject falseText;
+    private bool Door = false;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F) && Door)
+        {
+            GameManager.Instance.hasKey = false;
+            trueText.SetActive(false);
+            GameManager.Instance.NextStage();
+            GameManager.Instance.jsonSave.Save();
+            Door = false;
+        }
+    }
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "PlayerAim")
@@ -16,13 +28,7 @@ public class OpenDoor : MonoBehaviour
             if (GameManager.Instance.hasKey)
             {
                 trueText.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.F))
-                {
-                    GameManager.Instance.hasKey = false;
-                    trueText.SetActive(false);
-                    GameManager.Instance.NextStage();
-                    GameManager.Instance.jsonSave.Save();
-                }
+                Door = true;
             }
             else
             {

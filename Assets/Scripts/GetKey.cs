@@ -14,7 +14,7 @@ public class GetKey : MonoBehaviour
     private bool inventorykey = false;
     private bool inventoryText = false;
     private bool inDrawer = false;
-
+    private bool Key = true;
     Drawer drawer;
     private void OnTriggerStay(Collider other)
     {
@@ -27,18 +27,7 @@ public class GetKey : MonoBehaviour
                     inventoryText = true;
                     getKeyText.SetActive(inventoryText);
                     light.SetActive(inventoryText);
-                    if (Input.GetKeyDown(KeyCode.F))
-                    {
-                        GameManager.Instance.hasKey = true;
-                        inventorykey = true;
-                        GameManager.Instance.inventoryKey();
-                        if (inventorykey == true)
-                        {
-                            inventoryText = false;
-                            getKeyText.SetActive(inventoryText);
-                        }
-                        gameObject.SetActive(false);
-                    }
+                    Key = true;
                 }
             }
             else
@@ -46,24 +35,29 @@ public class GetKey : MonoBehaviour
                 inventoryText = true;
                 getKeyText.SetActive(inventoryText);
                 light.SetActive(inventoryText);
-                if (Input.GetKeyDown(KeyCode.F))
-                {
-                    GameManager.Instance.hasKey = true;
-                    inventorykey = true;
-                    GameManager.Instance.inventoryKey();
-                    if (inventorykey == true)
-                    {
-                        inventoryText = false;
-                        getKeyText.SetActive(inventoryText);
-                    }
-                    gameObject.SetActive(false);
-                }
+                Key = true;
             }
         }
         if(other.tag == "Drawer" || other.tag == "Drawer1")
         {
             inDrawer = true;
             drawer = other.GetComponent<Drawer>();
+        }
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F) && Key)
+        {
+            GameManager.Instance.hasKey = true;
+            inventorykey = true;
+            GameManager.Instance.inventoryKey();
+            if (inventorykey == true)
+            {
+                inventoryText = false;
+                getKeyText.SetActive(inventoryText);
+            }
+            gameObject.SetActive(false);
+            Key = false;
         }
     }
     private void OnTriggerExit(Collider other)
@@ -74,6 +68,7 @@ public class GetKey : MonoBehaviour
             getKeyText.SetActive(inventoryText);
             light.SetActive(inventoryText);
         }
+        Key = false;
     }
     public void KeyPos(int stage)
     {

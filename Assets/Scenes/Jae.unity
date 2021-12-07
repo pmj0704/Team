@@ -4896,6 +4896,30 @@ PrefabInstance:
       propertyPath: key
       value: 
       objectReference: {fileID: 1519724175}
+    - target: {fileID: 3071408503730013678, guid: 796e96b43173f3f49a1ad238649bfd67, type: 3}
+      propertyPath: m_Size.x
+      value: 198.88963
+      objectReference: {fileID: 0}
+    - target: {fileID: 3071408503730013678, guid: 796e96b43173f3f49a1ad238649bfd67, type: 3}
+      propertyPath: m_Size.y
+      value: 137.61185
+      objectReference: {fileID: 0}
+    - target: {fileID: 3071408503730013678, guid: 796e96b43173f3f49a1ad238649bfd67, type: 3}
+      propertyPath: m_Size.z
+      value: 23209.059
+      objectReference: {fileID: 0}
+    - target: {fileID: 3071408503730013678, guid: 796e96b43173f3f49a1ad238649bfd67, type: 3}
+      propertyPath: m_Center.x
+      value: 165.61821
+      objectReference: {fileID: 0}
+    - target: {fileID: 3071408503730013678, guid: 796e96b43173f3f49a1ad238649bfd67, type: 3}
+      propertyPath: m_Center.y
+      value: -106.86384
+      objectReference: {fileID: 0}
+    - target: {fileID: 3071408503730013678, guid: 796e96b43173f3f49a1ad238649bfd67, type: 3}
+      propertyPath: m_Center.z
+      value: 11654.076
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 796e96b43173f3f49a1ad238649bfd67, type: 3}
 --- !u!1 &1355981231

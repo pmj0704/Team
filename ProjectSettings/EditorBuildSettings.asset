@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/ParkMinjoon1.unity
+    path: Assets/Scenes/Main.unity
     guid: a2b59e9e7d4389d4bbf8fb74d5eb436f
   m_configObjects: {}
