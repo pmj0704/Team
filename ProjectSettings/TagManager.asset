@@ -15,6 +15,7 @@ TagManager:
   - Speaker
   - Piggy
   - Tv
+  - BreakableWall
   layers:
   - Default
   - TransparentFX

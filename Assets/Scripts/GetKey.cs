@@ -14,7 +14,8 @@ public class GetKey : MonoBehaviour
     private bool inventorykey = false;
     private bool inventoryText = false;
     private bool inDrawer = false;
-    private bool Key = true;
+    private bool Key = false;
+    public AudioSource keyfall;
     Drawer drawer;
     private void OnTriggerStay(Collider other)
     {

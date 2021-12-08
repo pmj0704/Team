@@ -17,7 +17,7 @@ public class PlayerAim : MonoBehaviour
     private bool TV = false;
     private bool Drawer = false;
     private bool Speaker = false;
-
+    private bool Brakeable = false;
     private void Start()
     {
         // Cursor.lockState = CursorLockMode.Locked;
@@ -33,7 +33,11 @@ public class PlayerAim : MonoBehaviour
             {
                 Debug.Log("F");
                 GameManager.Instance.WelcomeF();
-                if (GameManager.Instance.repeatTime == 12 && !GameManager.Instance.hasKey) key.gameObject.SetActive(true);
+                if (GameManager.Instance.repeatTime == 12 && !GameManager.Instance.hasKey)
+                {
+                    key.gameObject.SetActive(true);
+                    StartCoroutine(KeyFall());
+                }
                 if (GameManager.Instance.repeatTime == 13) GameManager.Instance.light.color = Color.white;
                 if (GameManager.Instance.repeatTime == 26)
                 {
@@ -52,11 +56,20 @@ public class PlayerAim : MonoBehaviour
             if(Speaker)
             {
                 GameManager.Instance.hasSpeaker = !GameManager.Instance.hasSpeaker;
-                if ((GameManager.Instance.repeatTime == 4 || GameManager.Instance.repeatTime == 18) && !GameManager.Instance.hasKey) key.gameObject.SetActive(true);
+                if ((GameManager.Instance.repeatTime == 4 || GameManager.Instance.repeatTime == 18) && !GameManager.Instance.hasKey)
+                {
+                    key.gameObject.SetActive(true);
+                    StartCoroutine(KeyFall());
+                }
+            }
+            if(Brakeable)
+            {
+                playerAim.collider.transform.parent.GetComponent<BreakableWall>().BreakWall();
             }
             Drawer = false;
             Speaker = false;
             TV = false;
+            Brakeable = false;
         }
     }
     private void FixedUpdate()
@@ -90,7 +103,14 @@ public class PlayerAim : MonoBehaviour
             {
                 TV = false;
             }
-            
+            if (playerAim.collider.tag == "BreakableWall")
+            {
+                Brakeable = true;
+            }
+            else
+            {
+                Brakeable = false;
+            }
             if (playerAim.collider.tag == "Untagged")
             {
 
@@ -101,11 +121,17 @@ public class PlayerAim : MonoBehaviour
             Drawer = false;
             Speaker = false;
             TV = false;
+            Brakeable = false;
         }
     }
     private IEnumerator Endding()
     {
         yield return new WaitForSeconds(9f);
         GameManager.Instance.End();
+    }
+    private IEnumerator KeyFall()
+    {
+        yield return new WaitForSeconds(1.2f);
+        key.keyfall.Play();
     }
 }

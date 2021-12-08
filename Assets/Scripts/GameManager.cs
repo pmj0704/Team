@@ -19,7 +19,7 @@ public class GameManager : MonoSingleton<GameManager>
     private VideoClip TestSbj;
     [SerializeField]
     private VideoClip zzz;
-    [HideInInspector]
+    //[HideInInspector]
     public int repeatTime = 0;
 
     public Drawer drawer;
@@ -257,6 +257,7 @@ public class GameManager : MonoSingleton<GameManager>
                 waitKey(15);
                 if (thirteen)
                 {
+                    hasSpeaker = false;
                     light.color = Color.black;
                     TVoff = false;
                     thirteen = false;
@@ -284,9 +285,10 @@ public class GameManager : MonoSingleton<GameManager>
                 TvSound.SetActive(false);
                 SmileObj.SetActive(true);
                 waitKey(15);
-
+                smileMats[2].mainTexture = smileMats[5].mainTexture;
                 break;
             case 18:
+                smileMats[2].mainTexture = smileMats[1].mainTexture;
                 Respawn.position = roomPos[0];
                 RespawnF();
                 SmileObj.SetActive(false);
@@ -309,6 +311,7 @@ public class GameManager : MonoSingleton<GameManager>
                 light.range = 50;
                 if (cry)
                 {
+                    hasSpeaker = false;
                     voice.enabled = true;
                     cry = false;
                 }
