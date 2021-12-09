@@ -106,7 +106,6 @@ public class Move : MonoBehaviour
         {
             if(!IsLaying)
             {
-                Debug.Log("Lay");
                 IsLaying = true;
                 theCamera.transform.localPosition = LayPos;
             }
@@ -126,7 +125,7 @@ public class Move : MonoBehaviour
     }
     private void OnCollisionExit(Collision collision)
     {
-        walkSpeed = 70;
+        walkSpeed = 40;
     }
 
 

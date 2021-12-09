@@ -22,6 +22,11 @@ public class TV : MonoBehaviour
             tvOnOff = false;
             transform.GetChild(0).gameObject.SetActive(tvOnOff);
         }
+
+        if(GameManager.Instance.repeatTime == 26 && !GameManager.Instance.TVoff)
+        {
+            onOffText.SetActive(false);
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -40,5 +45,6 @@ public class TV : MonoBehaviour
             onOffText.SetActive(textOnOff);
         }
     }
+    
 
 }

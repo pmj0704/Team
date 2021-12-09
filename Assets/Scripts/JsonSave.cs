@@ -13,7 +13,7 @@ public class JsonSave : MonoBehaviour
 
     void Start()
     {
-        SAVE_DATA_DIRECTORY = Application.dataPath + "/Save/";
+        SAVE_DATA_DIRECTORY = Application.persistentDataPath + "/Save/";
 
         if (!Directory.Exists(SAVE_DATA_DIRECTORY)) // 해당 경로가 존재하지 않는다면
             Directory.CreateDirectory(SAVE_DATA_DIRECTORY); // 폴더 생성(경로 생성)
@@ -21,12 +21,11 @@ public class JsonSave : MonoBehaviour
 
     public void Save()
     {
-        Debug.Log("세이브");
-        Debug.Log(GameManager.Instance.repeatTime);
-        Debug.Log("/");
 
 
         saveData.saveRepeatTime = GameManager.Instance.repeatTime;
+        saveData.savecurrentSound = GameManager.Instance.currentsound;
+        saveData.savecurrentTv = GameManager.Instance.currentTv;
         // repeatTime저장 
 
         // 최종 전체 저장
@@ -34,14 +33,10 @@ public class JsonSave : MonoBehaviour
 
         File.WriteAllText(SAVE_DATA_DIRECTORY + SAVE_FILENAME, json);
 
-        Debug.Log("저장 완료");
-        Debug.Log(json);
     }
 
     public void Load()
     {
-        Debug.Log("로드");
-        Debug.Log(" / ");
 
         if (File.Exists(SAVE_DATA_DIRECTORY + SAVE_FILENAME))
         {
@@ -50,15 +45,13 @@ public class JsonSave : MonoBehaviour
             saveData = JsonUtility.FromJson<SaveData>(loadJson);
 
             GameManager.Instance.repeatTime = saveData.saveRepeatTime;
-
-            Debug.Log(GameManager.Instance.repeatTime);
-            Debug.Log("로드 완료");
+            GameManager.Instance.currentsound = saveData.savecurrentSound;
+            GameManager.Instance.currentTv = saveData.savecurrentTv;
 
             GameManager.Instance.LoadStage();
         }
         else
         {
-            Debug.Log("세이브 파일이 없습니다.");
         }
     }
 }

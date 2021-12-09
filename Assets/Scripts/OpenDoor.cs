@@ -20,8 +20,8 @@ public class OpenDoor : MonoBehaviour
                 {
                     GameManager.Instance.hasKey = false;
                     trueText.SetActive(false);
-                    Debug.Log("Open");
                     GameManager.Instance.NextStage();
+                    GameManager.Instance.jsonSave.Save();
                 }
             }
             else

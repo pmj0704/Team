@@ -37,15 +37,11 @@ public class Drawer : MonoBehaviour
             {
                 transform.position = Vector3.MoveTowards(transform.position, targetpos, 5 * Time.deltaTime);
                 yield return new WaitForSeconds(0f);
-                Debug.Log(transform.position.z);
                 if((int)transform.position.z <= (int)targetpos.z)
                 {
                     break;
                 }
             }
-
-            Debug.Log("1");
-            Debug.Log(transform.position.z);
 
         yield return new WaitForSeconds(0f);
             isClosed = false;
@@ -61,7 +57,6 @@ public class Drawer : MonoBehaviour
                     break;
                 }
             }
-            Debug.Log("2");
             yield return new WaitForSeconds(0f);
             isClosed = true;
         }
@@ -70,7 +65,6 @@ public class Drawer : MonoBehaviour
     {
         if (Z == 1 && Fst)
         {
-            Debug.Log("3");
             targetpos = new Vector3(transform.position.x, transform.position.y, transform.position.z - 3);
         }
         else if(Z != 1 && Fst)
