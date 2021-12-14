@@ -2135,6 +2135,7 @@ MonoBehaviour:
   hasKey: 0
   hasSpeaker: 0
   TVoff: 1
+  slenderManSound: 0
   TV: {fileID: 4310402281870853322}
   TestSbj: {fileID: 32900000, guid: eb76f7d3d81e7a94abd9a02e95c639ae, type: 3}
   zzz: {fileID: 32900000, guid: 3ce6c345d01e7e447af8ddbeae2bc07f, type: 3}
@@ -5873,8 +5874,16 @@ PrefabInstance:
       value: Slender Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4907599038931602864, guid: 8d7e29fe9c94bc04cb89cc214d7637c6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907599038931602864, guid: 8d7e29fe9c94bc04cb89cc214d7637c6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907599038931602864, guid: 8d7e29fe9c94bc04cb89cc214d7637c6, type: 3}
+      propertyPath: m_TagString
+      value: SlenderMan
       objectReference: {fileID: 0}
     - target: {fileID: 8232600510935859107, guid: 8d7e29fe9c94bc04cb89cc214d7637c6, type: 3}
       propertyPath: m_RootOrder
@@ -8074,6 +8083,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &2021047375
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021047372}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.37458998, y: 2.70714, z: 0.18178217}
+  m_Center: {x: -0.005284685, y: 1.4490061, z: 0.051157236}
 --- !u!114 &2021047376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8086,6 +8108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e509f28f143f274a88181b9e8fb9dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: b6d43f318f686af409cfc85154d0cccc, type: 3}
 --- !u!1 &2021860542
 GameObject:
   m_ObjectHideFlags: 0

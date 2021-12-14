@@ -13,7 +13,9 @@ public class HeadSetPlayer : MonoBehaviour
 
     private AudioSource musicPlayer;
     public AudioClip headSetMusic;
+
     private bool start = true;
+
     private void Start()
     {
         musicPlayer = GetComponent<AudioSource>();
