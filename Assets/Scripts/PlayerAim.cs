@@ -36,7 +36,7 @@ public class PlayerAim : MonoBehaviour
                 if (GameManager.Instance.repeatTime == 12 && !GameManager.Instance.hasKey)
                 {
                     key.gameObject.SetActive(true);
-                    StartCoroutine(KeyFall());
+                    StartCoroutine(KeyFall()); 
                 }
                 if (GameManager.Instance.repeatTime == 13) GameManager.Instance.light.color = Color.white;
                 if (GameManager.Instance.repeatTime == 26)
@@ -65,6 +65,7 @@ public class PlayerAim : MonoBehaviour
             if(Brakeable)
             {
                 playerAim.collider.transform.parent.GetComponent<BreakableWall>().BreakWall();
+                playerAim.collider.transform.GetComponent<AudioSource>().Play();
             }
             Drawer = false;
             Speaker = false;
