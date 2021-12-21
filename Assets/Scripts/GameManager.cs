@@ -13,6 +13,9 @@ public class GameManager : MonoSingleton<GameManager>
     public bool hasSpeaker = false;
     [HideInInspector]
     public bool TVoff = true;
+    [HideInInspector]
+    public bool slenderManSound = false;
+
     [SerializeField]
     private VideoPlayer TV;
     [SerializeField]

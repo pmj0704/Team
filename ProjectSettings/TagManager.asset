@@ -16,6 +16,7 @@ TagManager:
   - Piggy
   - Tv
   - BreakableWall
+  - SlenderMan
   layers:
   - Default
   - TransparentFX

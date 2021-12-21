@@ -112,6 +112,10 @@ public class PlayerAim : MonoBehaviour
             {
                 Brakeable = false;
             }
+            if (playerAim.collider.tag == "SlenderMan")
+            {
+                GameManager.Instance.slenderManSound = true;
+            }
             if (playerAim.collider.tag == "Untagged")
             {
 
