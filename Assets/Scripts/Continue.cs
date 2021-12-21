@@ -28,6 +28,7 @@ public class Continue : MonoBehaviour
         GameManager.Instance.Resume();
         GameManager.Instance.uiOn = false;
         Cursor.visible = false;
+        GameManager.Instance.esc = false;
     }
     public void Quit()
     {
@@ -65,6 +66,7 @@ public class Continue : MonoBehaviour
         GameManager.Instance.mainOn = false;
         MainMenu.SetActive(false);
         Esc.SetActive(false);
+        GameManager.Instance.esc = false;
         NewGameMsg.SetActive(false);
     }
     public void LoadGame()
@@ -81,6 +83,7 @@ public class Continue : MonoBehaviour
         GameManager.Instance.mainOn = false;
         MainMenu.SetActive(false);
         Esc.SetActive(false);
+        GameManager.Instance.esc = false;
     }
     private IEnumerator Error(GameObject game)
     {
@@ -100,6 +103,8 @@ public class Continue : MonoBehaviour
         {
             Esc.SetActive(true);
         }
+        GameManager.Instance.esc = false;
+
     }
     public void SettingsF(int i)
     {
