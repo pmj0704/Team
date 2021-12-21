@@ -82,6 +82,8 @@ public class GameManager : MonoSingleton<GameManager>
     private bool room23 = true;
     [SerializeField]
     private GameObject mainMenu;
+    [HideInInspector]
+    public bool esc = false;
 
     [HideInInspector]
     public bool currentsound = false;
@@ -131,6 +133,7 @@ public class GameManager : MonoSingleton<GameManager>
             uiOn = true;
             monster.Pause();
             voice.Pause();
+            esc = true;
         }
         else if(Input.GetKeyDown(KeyCode.Escape) && uiOn && !mainOn)
         {
@@ -140,6 +143,7 @@ public class GameManager : MonoSingleton<GameManager>
             Time.timeScale = 1;
             hasSpeaker = true;
             uiOn = false;
+            esc = false;
             Resume();
         }
         if (timerReset == false)

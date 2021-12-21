@@ -120,7 +120,7 @@ public class Move : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Wall"))
         {
-            walkSpeed = 0;
+            myRigid.AddForce(-transform.forward * 5);
         }
     }
     private void OnCollisionExit(Collision collision)
