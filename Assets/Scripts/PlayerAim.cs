@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerAim : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class PlayerAim : MonoBehaviour
     [SerializeField]
     private GetKey key;
 
+    [SerializeField]
+    public Image testImage;
+
     private int tvOnOff = 0;
     private bool tvSeting = false;
 
@@ -18,6 +22,7 @@ public class PlayerAim : MonoBehaviour
     private bool Drawer = false;
     private bool Speaker = false;
     private bool Brakeable = false;
+
     private void Start()
     {
         // Cursor.lockState = CursorLockMode.Locked;
@@ -67,6 +72,7 @@ public class PlayerAim : MonoBehaviour
                 playerAim.collider.transform.parent.GetComponent<BreakableWall>().BreakWall();
                 playerAim.collider.transform.GetComponent<AudioSource>().Play();
             }
+
             Drawer = false;
             Speaker = false;
             TV = false;
@@ -115,6 +121,11 @@ public class PlayerAim : MonoBehaviour
             if (playerAim.collider.tag == "SlenderMan")
             {
                 GameManager.Instance.slenderManSound = true;
+            }
+            if (playerAim.collider.tag == "AnimationTest")
+            {
+                if (Input.GetKeyDown(KeyCode.F))
+                testImage.gameObject.SetActive(true);
             }
             if (playerAim.collider.tag == "Untagged")
             {
