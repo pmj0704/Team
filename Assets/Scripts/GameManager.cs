@@ -13,13 +13,16 @@ public class GameManager : MonoSingleton<GameManager>
     public bool hasSpeaker = false;
     [HideInInspector]
     public bool TVoff = true;
+    [HideInInspector]
+    public bool slenderManSound = false;
+
     [SerializeField]
     private VideoPlayer TV;
     [SerializeField]
     private VideoClip TestSbj;
     [SerializeField]
     private VideoClip zzz;
-    [HideInInspector]
+    //[HideInInspector]
     public int repeatTime = 0;
 
     public Drawer drawer;
@@ -79,6 +82,8 @@ public class GameManager : MonoSingleton<GameManager>
     private bool room23 = true;
     [SerializeField]
     private GameObject mainMenu;
+    [HideInInspector]
+    public bool esc = false;
 
     [HideInInspector]
     public bool currentsound = false;
@@ -128,6 +133,7 @@ public class GameManager : MonoSingleton<GameManager>
             uiOn = true;
             monster.Pause();
             voice.Pause();
+            esc = true;
         }
         else if(Input.GetKeyDown(KeyCode.Escape) && uiOn && !mainOn)
         {
@@ -137,6 +143,7 @@ public class GameManager : MonoSingleton<GameManager>
             Time.timeScale = 1;
             hasSpeaker = true;
             uiOn = false;
+            esc = false;
             Resume();
         }
         if (timerReset == false)
@@ -257,6 +264,7 @@ public class GameManager : MonoSingleton<GameManager>
                 waitKey(15);
                 if (thirteen)
                 {
+                    hasSpeaker = false;
                     light.color = Color.black;
                     TVoff = false;
                     thirteen = false;
@@ -284,9 +292,10 @@ public class GameManager : MonoSingleton<GameManager>
                 TvSound.SetActive(false);
                 SmileObj.SetActive(true);
                 waitKey(15);
-
+                smileMats[2].mainTexture = smileMats[5].mainTexture;
                 break;
             case 18:
+                smileMats[2].mainTexture = smileMats[1].mainTexture;
                 Respawn.position = roomPos[0];
                 RespawnF();
                 SmileObj.SetActive(false);
@@ -309,6 +318,7 @@ public class GameManager : MonoSingleton<GameManager>
                 light.range = 50;
                 if (cry)
                 {
+                    hasSpeaker = false;
                     voice.enabled = true;
                     cry = false;
                 }
